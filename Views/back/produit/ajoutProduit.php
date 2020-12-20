@@ -542,7 +542,7 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                                Ajouter Medecin
+                                Ajouter produit
                             </h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
@@ -552,7 +552,7 @@
                             </ul>
                         </div>
                         <div class="body">
-                            <form action="ajoutMedecinAction.php" method="POST">
+                            <form action="ajoutProduitAction.php" method="POST">
                                 <div class="form-group form-float">
                                     <div class="form-line">
                                         <input type="text" class="form-control" id="nom" name="nom" maxlength="10" minlength="3" required>
@@ -562,29 +562,36 @@
                                 </div>
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="text" class="form-control"id="prenom" name="prenom" min="10" max="200" required>
-                                        <label class="form-label">Prenom</label>
+                                        <input type="text" class="form-control"id="prix" name="prix" min="10" max="200" required>
+                                        <label class="form-label">prix</label>
                                     </div>
                                     <div class="help-info">Min. Value: 10, Max. Value: 200</div>
                                 </div>
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="number" class="form-control" id="age" name="age" required>
-                                        <label class="form-label">Age</label>
+                                        <input type="text" class="form-control" id="chemin_img" name="chemin_img" required>
+                                        <label class="form-label">chemin_img</label>
                                     </div>
                                     <div class="help-info">Starts with http://, https://, ftp:// etc</div>
                                 </div>
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="text" class="form-control" id="departement" name="departement" required>
-                                        <label class="form-label">Departement</label>
+                                        <input type="number" class="form-control" id="quantite_total" name="quantite_total" required>
+                                        <label class="form-label">quantite_total</label>
                                     </div>
                                     <div class="help-info">YYYY-MM-DD format</div>
                                 </div>
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="number" class="form-control"id="telephone" name="telephone" required>
-                                        <label class="form-label">telephone </label>
+                                        <input type="text" class="form-control"id="description" name="description" required>
+                                        <label class="form-label">Description </label>
+                                    </div>
+                                    <div class="help-info">Numbers only</div>
+                                </div>
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <input type="number" class="form-control"id="idCat" name="idCat" required>
+                                        <label class="form-label">Catégorie </label>
                                     </div>
                                     <div class="help-info">Numbers only</div>
                                 </div>
