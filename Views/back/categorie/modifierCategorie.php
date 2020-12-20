@@ -1,10 +1,57 @@
+<?php
+
+include_once "../../../controller/categorieC.php";
+include_once "../../../model/categorie.php";
+
+
+function pdo_connect_mysql() {
+    $DATABASE_HOST = 'localhost';
+    $DATABASE_USER = 'root';
+    $DATABASE_PASS = '';
+    $DATABASE_NAME = 'projet';
+    try {
+        return new PDO('mysql:host=' . $DATABASE_HOST . ';dbname=' . $DATABASE_NAME . ';charset=utf8', $DATABASE_USER, $DATABASE_PASS);
+    } catch (PDOException $exception) {
+        // If there is an error with the connection, stop the script and display the error.
+        exit('Failed to connect to database!');
+    }
+}
+$msg = '';
+$pdo = pdo_connect_mysql();
+// Check if the categorie id exists, for example update.php?id=1 will get the categorie with the id of 1
+if (isset($_GET['idCat'])) {
+    if (!empty($_POST)) {
+        // This part is similar to the create.php, but instead we update a record and not insert
+      //  $idCat = isset($_POST['idCat']) ? $_POST['idCat'] : NULL;
+        $nom = isset($_POST['nom']) ? $_POST['nom'] : '';
+    
+        $chemin_img = isset($_POST['chemin_img']) ? $_POST['chemin_img'] : '';
+       
+        // Update the record
+        $stmt = $pdo->prepare('UPDATE categorie SET  nom = ?, chemin_img = ? WHERE idCat = ?');
+        $stmt->execute([ $nom, $chemin_img,  $_GET['idCat']]);
+        $msg = 'Updated Successfully!';
+    }
+    // Get the categorie from the categories table
+ $stmt = $pdo->prepare('SELECT * FROM categorie WHERE idCat = ?');
+   $stmt->execute([$_GET['idCat']]);
+  $categorie = $stmt->fetch(PDO::FETCH_ASSOC);
+    if (!$categorie) {
+       exit('categorie doesn\'t exist with that idCat!');
+    }
+} 
+else {
+    exit('No idCat specified!');
+}
+
+?>
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Form Wizard | Bootstrap Based Admin Template - Material Design</title>
+    <title>Form Validation | Bootstrap Based Admin Template - Material Design</title>
     <!-- Favicon-->
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
 
@@ -318,15 +365,15 @@
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">perm_media</i>
-                            <span>Gestion Blog </span>
+                            <span>Gestion categorie </span>
                         </a>
                         <ul class="active">
                             
                             <li>
-                                <a href="../blog/ajoutBlog.php">Créer un blog</a>
+                                <a href="../categorie/ajoutcategorie.php">Créer un categorie</a>
                             </li>
                             <li>
-                                <a href="../blog/listBlog.php">list des blog</a>
+                                <a href="../categorie/listcategorie.php">list des categorie</a>
                             </li>
                         </ul>
                     </li>
@@ -337,10 +384,10 @@
                         </a>
                         <ul class="active">
                             
-                            <li>
+                            <li>  
                                 <a href="../chambre/Ajouterchambre.php">Créer un chambre</a>
                             </li>
-                            <li>
+                            <li>   
                                 <a href="../chambre/consulterchambres.php">list des chambres</a>
                             </li>
                             <li>
@@ -363,7 +410,6 @@
                             </li>
                         </ul>
                     </li>
-                   
                    
                
                     
@@ -530,89 +576,55 @@
         <div class="container-fluid">
             <div class="block-header">
                 <h2>
-                    FORM WIZARD
-                    <small>Taken from <a href="https://github.com/rstaib/jquery-steps" target="_blank">github.com/rstaib/jquery-steps</a> & <a href="https://jqueryvalidation.org/" target="_blank">jqueryvalidation.org</a></small>
+                    FORM VALIDATION
+                    <small>Taken from <a href="https://jqueryvalidation.org/" target="_blank">jqueryvalidation.org</a></small>
                 </h2>
             </div>
-         
-            
+           
+            <!-- #END# Basic Validation -->
+            <!-- Advanced Validation -->
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
-                            <h2>BLOG </h2>
-                           
+                            <h2>
+                                modifier categorie
+                            </h2>
+                         
                         </div>
                         <div class="body">
-                            <form action="ajoutBlogAction.php" id="wizard_with_validation" method="POST">
-                                <h3>Titre et description</h3>
-                                <fieldset>
-                                    <div class="form-group form-float">
-                                          <div class="form-line">
-                                            <input type="text" class="form-control" name="titre" id="titre" required>
-                                            <label class="form-label">Titre*</label>
-                                        </div>
-                                      </div>
-                                    <div class="form-group form-float">
-                                        <div class="form-line">
-                                        <input type="text" class="form-control" name="description" id="description" required>
-                                            
-                                            <label class="form-label">Description*</label>
-                                        </div>
-                                    </div>
-                                      
-                                </fieldset>
-
-                                <h3>medecin et Date</h3>
-                                <fieldset>
-                                  
-            <!--- -->
-            <div class="form-group form-float">
-                                        <div class="form-line">
-                                            <input type="chemin_img" name="chemin_img" id="chemin_img"  class="form-control" required>
-                                            <label class="form-label"> Image*</label>
-                                        </div>
-                                    </div>
-                                   
-                                   
-                                    <label for="acceptTerms-2">I agree with the Terms and Conditions.</label>
-                                   
-                                </fieldset>
-
-                                <h3>Image - Finish</h3>
-                                <fieldset>
-                                <div class="form-group form-float">
-                                        <div class="form-line">
-                                            <input type="text" name="idM" id="idM" class="form-control" required>
-                                            <label class="form-label">identifiant medecin *</label>
-                                        </div>
-                                    </div>
-                                         
-              <div >
-                <div class="input-group">
-                    <div class="form-group form-float">
-                  
-                  </div>
-                  <input type="datetime-local" name="date" id="date"  value="<?=date('Y-m-d\TH:i')?>"  class="form-control" placeholder="Left Font Awesome Icon">
-                  <label class="form-label"> 
-                      date *</label>
-                  <div>
-
-              </div>
-
-                 
-            <button class="btn btn-success" type="submit">valider</button>
-           
-           <button class="btn btn-danger" type ="reset">annuler </button>
-                                </fieldset>
-    
-
+                            <form action="modifierCategorieAction.php?idCat=<?=$categorie['idCat']?>" method="POST">
+                            <table class='table table-hover table-responsive table-bordered'>
+                            <tr>
+            <td>nom</td>
+            <td><input type='text' name='nom' value ="<?php echo $categorie['nom'];?>" class='form-control' /></td>
+        </tr>
+       
+        
+        <tr>
+            <td>Image </td>
+            <td><input type='text' name='chemin_img'  value ="<?php echo $categorie['chemin_img'];?>" class='form-control' /></td>
+        </tr>
+      
+        
+        
+     
+                                        <button class="btn btn-success waves-effect" type="submit">Valider</button>
+                                        <a href='listCategorie.php' class='btn btn-danger'>Back</a>
+                               
+                                </table>
                             </form>
+                            <?php if ($msg): ?>
+                             <p><?=$msg?></p>
+                            <?php endif; ?>
+
+                                  
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- #END# Advanced Form Example With Validation -->
+            <!-- #END# Advanced Validation -->
+           
         </div>
     </section>
 
@@ -642,9 +654,11 @@
 
     <!-- Custom Js -->
     <script src="../js/admin.js"></script>
-    <script src="../js/pages/forms/form-wizard.js"></script>
+    <script src="../js/pages/forms/form-validation.js"></script>
 
     <!-- Demo Js -->
     <script src="../js/demo.js"></script>
 </body>
+
 </html>
+

@@ -1,58 +1,10 @@
-<?php
-
-include_once "../../../controller/blogC.php";
-include_once "../../../model/blog.php";
-
-
-    function pdo_connect_mysql() {
-        $DATABASE_HOST = 'localhost';
-        $DATABASE_USER = 'root';
-        $DATABASE_PASS = '';
-        $DATABASE_NAME = 'projetmedecin';
-        try {
-            return new PDO('mysql:host=' . $DATABASE_HOST . ';dbname=' . $DATABASE_NAME . ';charset=utf8', $DATABASE_USER, $DATABASE_PASS);
-        } catch (PDOException $exception) {
-            // If there is an error with the connection, stop the script and display the error.
-            exit('Failed to connect to database!');
-        }
-    }
-    $msg = '';
-    $pdo = pdo_connect_mysql();
-    // Check if the blog id exists, for example update.php?id=1 will get the blog with the id of 1
-    if (isset($_GET['idB'])) {
-        if (!empty($_POST)) {
-            // This part is similar to the create.php, but instead we update a record and not insert
-          //  $idB = isset($_POST['idB']) ? $_POST['idB'] : NULL;
-            $titre = isset($_POST['titre']) ? $_POST['titre'] : '';
-            $description = isset($_POST['description']) ? $_POST['description'] : '';
-            $chemin_img = isset($_POST['chemin_img']) ? $_POST['chemin_img'] : '';
-            $idM = isset($_POST['idM']) ? $_POST['idM'] : '';
-            $date = isset($_POST['date']) ? $_POST['date'] : '';
-            // Update the record
-            $stmt = $pdo->prepare('UPDATE blog SET  titre = ?, description = ?, chemin_img = ?, idM = ?, date = ? WHERE idB = ?');
-            $stmt->execute([ $titre, $description, $chemin_img, $idM, $date, $_GET['idB']]);
-            $msg = 'Updated Successfully!';
-        }
-        // Get the blog from the blogs table
-     $stmt = $pdo->prepare('SELECT * FROM blog WHERE idB = ?');
-       $stmt->execute([$_GET['idB']]);
-      $blog = $stmt->fetch(PDO::FETCH_ASSOC);
-        if (!$blog) {
-           exit('blog doesn\'t exist with that idB!');
-        }
-    } 
-    else {
-        exit('No idB specified!');
-    }
-    
-    ?>
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Form Validation | Bootstrap Based Admin Template - Material Design</title>
+    <title>Form Wizard | Bootstrap Based Admin Template - Material Design</title>
     <!-- Favicon-->
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
 
@@ -385,10 +337,10 @@ include_once "../../../model/blog.php";
                         </a>
                         <ul class="active">
                             
-                            <li>  
+                            <li>
                                 <a href="../chambre/Ajouterchambre.php">Créer un chambre</a>
                             </li>
-                            <li>   
+                            <li>
                                 <a href="../chambre/consulterchambres.php">list des chambres</a>
                             </li>
                             <li>
@@ -411,6 +363,7 @@ include_once "../../../model/blog.php";
                             </li>
                         </ul>
                     </li>
+                   
                    
                
                     
@@ -577,64 +530,72 @@ include_once "../../../model/blog.php";
         <div class="container-fluid">
             <div class="block-header">
                 <h2>
-                    FORM VALIDATION
-                    <small>Taken from <a href="https://jqueryvalidation.org/" target="_blank">jqueryvalidation.org</a></small>
+                    FORM WIZARD
+                    <small>Taken from <a href="https://github.com/rstaib/jquery-steps" target="_blank">github.com/rstaib/jquery-steps</a> & <a href="https://jqueryvalidation.org/" target="_blank">jqueryvalidation.org</a></small>
                 </h2>
             </div>
-           
-            <!-- #END# Basic Validation -->
-            <!-- Advanced Validation -->
+         
+            
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
-                            <h2>
-                                modifier blog
-                            </h2>
-                         
+                            <h2>Categorie </h2>
+                           
                         </div>
                         <div class="body">
-                            <form action="modifierBlogAction.php?idB=<?=$blog['idB']?>" method="POST">
-                            <table class='table table-hover table-responsive table-bordered'>
-                            <tr>
-            <td>titre</td>
-            <td><input type='text' name='titre' value ="<?php echo $blog['titre'];?>" class='form-control' /></td>
-        </tr>
-        <tr>
-            <td>description</td>
-            <td><input type='text' name='description'  value ="<?php echo $blog['description'];?>" class='form-control' /></td>
-        </tr>
-        
-        <tr>
-            <td>Image </td>
-            <td><input type='text' name='chemin_img'  value ="<?php echo $blog['chemin_img'];?>" class='form-control' /></td>
-        </tr>
-        <tr>
-            <td>identifiant medecin</td>
-            <td><input type='text' name='idM'value ="<?php echo $blog['idM'];?>" class='form-control' /></td>
-        </tr>
-        <tr>
-            <td>date</td>
-            <td><input type='text' name='date'value ="<?php echo $blog['date'];?>" class='form-control' /></td>
-        </tr>
-        
-     
-                                        <button class="btn btn-success waves-effect" type="submit">Valider</button>
-                                        <a href='listBlog.php' class='btn btn-danger'>Back</a>
-                               
-                                </table>
-                            </form>
-                            <?php if ($msg): ?>
-                             <p><?=$msg?></p>
-                            <?php endif; ?>
+                            <form action="ajoutCategorieAction.php" id="wizard_with_validation" method="POST">
+                                <h3>Titre et description</h3>
+                                <fieldset>
+                                    <div class="form-group form-float">
+                                          <div class="form-line">
+                                            <input type="text" class="form-control" name="nom" id="nom" required>
+                                            <label class="form-label">Nom*</label>
+                                        </div>
+                                      </div>
+                                    
+                                      
+                                </fieldset>
 
+                                <h3>Image</h3>
+                                <fieldset>
                                   
+            <!--- -->
+            <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input type="chemin_img" name="chemin_img" id="chemin_img"  class="form-control" required>
+                                            <label class="form-label"> Image*</label>
+                                        </div>
+                                    </div>
+                                   
+                                   
+                                    <label for="acceptTerms-2">I agree with the Terms and Conditions.</label>
+                                   
+                                </fieldset>
+
+                                <h3>Image - Finish</h3>
+                                <fieldset>
+                                <div class="form-group form-float">
+                                        <div class="form-line">
+                                        <label for="acceptTerms-2">click validate to finish</label>
+                                        </div>
+                                    </div>
+                                         
+              
+
+                 
+            <button class="btn btn-success" type="submit">valider</button>
+           
+           <button class="btn btn-danger" type ="reset">annuler </button>
+                                </fieldset>
+    
+
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- #END# Advanced Validation -->
-           
+            <!-- #END# Advanced Form Example With Validation -->
         </div>
     </section>
 
@@ -664,11 +625,9 @@ include_once "../../../model/blog.php";
 
     <!-- Custom Js -->
     <script src="../js/admin.js"></script>
-    <script src="../js/pages/forms/form-validation.js"></script>
+    <script src="../js/pages/forms/form-wizard.js"></script>
 
     <!-- Demo Js -->
     <script src="../js/demo.js"></script>
 </body>
-
 </html>
-

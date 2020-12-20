@@ -1,11 +1,11 @@
 <?php
- include_once "../../../controller/blogC.php";
- include_once "../../../Model/blog.php";
+ include_once "../../../controller/categorieC.php";
+ include_once "../../../Model/categorie.php";
 
  
 
- $blogC=new blogC();
- $listeBlog=$blogC->afficherblog();
+ $categorieC=new categorieC();
+ $listeCategorie=$categorieC->affichercategorie();
 ?>
 
 <!DOCTYPE html>
@@ -330,9 +330,8 @@
                                     
                                         <tr>
                                             <th>Image</th>
-                                            <th>Titre</th>
-                                            <th>Id medecin</th>
-                                            <th>date</th>
+                                            <th>nom</th>
+                                            <th>action</th>
                                           
                                             
                                         </tr>
@@ -340,7 +339,7 @@
                                     
                                     <tbody id="myTable">
                                                  
-                                        <?php      foreach ($listeBlog as $row) {?>
+                                        <?php      foreach ($listeCategorie as $row) {?>
                             <tr class="tr-shadow">
                                
                                
@@ -348,18 +347,17 @@
                                 <img   src="images/<?php echo $row['chemin_img']; ?>"</img>
                                 </td>
                                 <td>
-                                <?php echo $row['titre']; ?>
+                                <?php echo $row['nom']; ?>
                                 </td>
                                
-                                <td ><?PHP echo $row['idM']; ?></td>
-                                <td><?PHP echo $row['date']; ?></td>
+                                
                                 <td>
                                 <form
-                                  method="POST" action="supprimerBlog.php">
+                                  method="POST" action="supprimerCategorie.php">
                         <input type="submit" name="supprimer" value="supprimer">
-                        <input type="hidden" value=<?PHP echo $row['idB']; ?> name="idB">
+                        <input type="hidden" value=<?PHP echo $row['idCat']; ?> name="idCat">
                         
-                        <a href="modifierBlog.php?idB=<?PHP echo $row['idB']; ?>" type="button"> Modifier </a>
+                        <a href="modifierCategorie.php?idCat=<?PHP echo $row['idCat']; ?>" type="button"> Modifier </a>
                     </td>
                                </form>
                                                     </td>
