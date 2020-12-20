@@ -343,7 +343,7 @@ else {
             <!-- #User Info -->
             <!-- Menu -->
             <div class="menu">
-                <ul class="list">
+            <ul class="list">
                     <li class="header">NAVIGATION PRINCIPALE</li>
                    
                     <li class="active">
@@ -353,10 +353,13 @@ else {
                         </a>
                         <ul class="active">
                             <li>
-                                <a href="../medecin/listMedecin.php">list des médecins</a>
+                                <a href="../produit/listProduit.php">list des produit</a>
                             </li>
                             <li>
-                                <a href="../medecin/ajoutMedecin.php">Ajouter medecin</a>
+                                <a href="../produit/ajoutProduit.php">Ajouter produit </a>
+                            </li>
+                            <li>
+                                <a href="../produit/statistiqueProduit.php"> Statistique </a>
                             </li>
                               
                             
@@ -365,53 +368,20 @@ else {
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">perm_media</i>
-                            <span>Gestion categorie </span>
+                            <span>Gestion Categorie </span>
                         </a>
                         <ul class="active">
                             
                             <li>
-                                <a href="../categorie/ajoutcategorie.php">Créer un categorie</a>
+                                <a href="../categorie/ajoutCategorie.php">Créer un categorie</a>
                             </li>
                             <li>
-                                <a href="../categorie/listcategorie.php">list des categorie</a>
+                                <a href="../categorie/listCategorie.php">list des categorie</a>
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">perm_media</i>
-                            <span>Gestion Chambre </span>
-                        </a>
-                        <ul class="active">
-                            
-                            <li>  
-                                <a href="../chambre/Ajouterchambre.php">Créer un chambre</a>
-                            </li>
-                            <li>   
-                                <a href="../chambre/consulterchambres.php">list des chambres</a>
-                            </li>
-                            <li>
-                                <a href="../chambre/statistiquechambres.php">Statistique </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">perm_media</i>
-                            <span>Gestion Occupation </span>
-                        </a>
-                        <ul class="active">
-                            
-                            <li>
-                                <a href="../occupation/Ajouteroccupation.php">Créer une occupation</a>
-                            </li>
-                            <li>
-                                <a href="../occupation/consulteroccupation.php">list des occupations</a>
-                            </li>
-                        </ul>
-                    </li>
-                   
-               
+                    
+                  
                     
                    
                 </ul>
