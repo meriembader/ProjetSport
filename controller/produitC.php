@@ -42,7 +42,21 @@ class config {
 
 		}
 
-		/*function recuperer($reference_sous_categorie){
+
+		/*
+		
+				function afficherJoinedcategorie(){
+			$db = config::getConnexion();
+			$sql="SELECT categorie.idCat, medecin.prenom, categorie.nom, categorie.description, categorie.chemin_img, categorie.date FROM categorie INNER JOIN medecin ON categorie.idM=medecin.idM";
+			$liste=$db->query($sql);
+			return $liste;
+			
+		}
+		
+		
+		
+		
+		function recuperer($reference_sous_categorie){
 			$db = config::getConnexion();
 			$sql = "SELECT reference FROM produit WHERE reference_sous_categorie = $reference_sous_categorie";
 			$liste=$db->query($sql);
