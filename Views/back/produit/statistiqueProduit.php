@@ -1,28 +1,26 @@
-﻿<?php  
-     include_once "../../../Controller/produitC.php";
-     include_once "../../../Model/produit.php";
 
-  
 
-  $produitC=new produitC();
-  $listProduit=$produitC->afficherproduit();
 
- /* 
-  else if(isset($_POST['supprimer'])){
-   
-    $produitC->supprimerproduit($_POST['reference']);
-    header('location: list_produits.php');
-  }*/
-  
+<?php
 
-  ?>
+$dbhandle = new mysqli('127.0.0.1', 'root', '','projet');
+echo $dbhandle->connect_error;
+
+$query = "SELECT  idCat, count(idCat)  FROM produit  group by idCat";
+$res = 	$dbhandle->query($query);
+
+
+
+
+
+?>
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Les produits </title>
+    <title>Les s </title>
     <!-- Favicon-->
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
 
@@ -211,7 +209,7 @@
             <!-- #User Info -->
             <!-- Menu -->
             <div class="menu">
-            <ul class="list">
+                <ul class="list">
                     <li class="header">NAVIGATION PRINCIPALE</li>
                    
                     <li class="active">
@@ -268,15 +266,7 @@
        
     </section>
 
-    <section class="content">
-        <div class="container-fluid">
-            <div class="block-header">
-                <h2>
-                    JQUERY DATATABLES
-                    <small>Taken from <a href="https://datatables.net/" target="_blank">datatables.net</a></small>
-                </h2>
-            </div>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         $(document).ready(function(){
             $("#myInput").on("keyup", function() {
@@ -286,87 +276,60 @@
                 });
             });
         });
+
+        </script>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="block-header">
+
+
+
+
+
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+		
+		['idCat','idCat'],
+         <?php
+		 
+		 //fetch_assoc(): lit une ligne de résultat MySql dans un tableau associatif //
+		 
+		 while ($row=$res->fetch_assoc()) {
+			 
+			 echo "['".$row['idCat']."',".$row['count(idCat)']."],"; 
+			 
+		 }
+		 
+		 
+		 
+		 
+		 ?>
+        ]);
+
+        var options = {
+          title: 'Catégorie',
+		  is3D:true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
     </script>
-            <!-- Exportable Table -->
-            <div class="row clearfix">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="card">
-                        <div class="header">
-                            <h2>
-                              Liste des produits
-                            </h2>
-                           
-                        </div>
-                       
-                       
-                        <div class="body">
-                            <div class="table-responsive">
-                         <div class="button">
-                         <a class="btn btn-primary" href="generatePDF.php"><span>PDF</span></a>
-    </div>
-                            <div id="DataTables_Table_1_filter" class="dataTables_filter">
-                                <label>Recherche:<input id="myInput"  type="text"name="rechercher" class="form-control input-sm" placeholder="" aria-controls="DataTables_Table_1"></label></div>
-                                <table class="table table-bordered table-striped table-hover dataTable js-exportable">
-                                    <thead>
-                                        <tr>
-                                        <th>image Produit</th>
-                                        <th>Nom </th>
-                                        <th>Prix DT </th>
-                                        <th>quantite totale</th>
-                                        <th>description</th>
-                                        <th>categorie</th>
-                                        <th>action</th>
-                                            
-                                        </tr>
-                                    </thead>
-                                    
-                                    <tbody id="myTable">
-                                                 
-                                        <?php      foreach ($listProduit as $row) {?>
-                            <tr class="tr-shadow">
-                               
-                            <td>  <img src="images/<?php echo $row['chemin_img']; ?>"</img></td>
-                                                   
-                                <td>
-                                <?php echo $row['nom']; ?>
-                                </td>
-                                <td class="desc"><?PHP echo $row['prix']."DT"; ?></td>
-                              
-                                <td><?PHP echo $row['quantite_total']; ?></td>
-                                <td>
-                                <?PHP echo $row['description']; ?>
-                                </td>
-                                <td>
-                                <?PHP echo $row['idCat']; ?>
-                                </td>
-                                <td>
-                                <form
-                                  method="POST" action="supprimerProduit.php">
-                        <input type="submit" name="supprimer" value="supprimer">
-                        <input type="hidden" value=<?PHP echo $row['reference']; ?> name="reference">
-                    
-                        <a href="modifierProduit.php?reference=<?PHP echo $row['reference']; ?>"> Modifier </a>
-                 
-                               </form>
-                                                    </td>
-                                                    <tr class="spacer"></tr>
-                                                   
-                                                </tr>
-                                            
-                                     
-                                                <?php
-                          }
-                          ?>
-                                      
-                                      
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- #END# Exportable Table -->
+  </head>
+  <body>
+ 
+    <div id="piechart" style="width: 800px; height: 500px;"></div>
+
+ </div>
         </div>
     </section>
 
@@ -385,23 +348,35 @@
     <!-- Waves Effect Plugin Js -->
     <script src="../plugins/node-waves/waves.js"></script>
 
-    <!-- Jquery DataTable Plugin Js -->
-    <script src="../plugins/jquery-datatable/jquery.dataTables.js"></script>
-    <script src="../plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
-    <script src="../plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
-    <script src="../plugins/jquery-datatable/extensions/export/buttons.flash.min.js"></script>
-    <script src="../plugins/jquery-datatable/extensions/export/jszip.min.js"></script>
-    <script src="../plugins/jquery-datatable/extensions/export/pdfmake.min.js"></script>
-    <script src="../plugins/jquery-datatable/extensions/export/vfs_fonts.js"></script>
-    <script src="../plugins/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
-    <script src="../plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script>
+    <!-- Jquery CountTo Plugin Js -->
+    <script src="../plugins/jquery-countto/jquery.countTo.js"></script>
+
+    <!-- Morris Plugin Js -->
+    <script src="../plugins/raphael/raphael.min.js"></script>
+    <script src="../plugins/morrisjs/morris.js"></script>
+
+    <!-- ChartJs -->
+    <script src="../plugins/chartjs/Chart.bundle.js"></script>
+
+    <!-- Flot Charts Plugin Js -->
+    <script src="../plugins/flot-charts/jquery.flot.js"></script>
+    <script src="../plugins/flot-charts/jquery.flot.resize.js"></script>
+    <script src="../plugins/flot-charts/jquery.flot.pie.js"></script>
+    <script src="../plugins/flot-charts/jquery.flot.categories.js"></script>
+    <script src="../plugins/flot-charts/jquery.flot.time.js"></script>
+
+    <!-- Sparkline Chart Plugin Js -->
+    <script src="../plugins/jquery-sparkline/jquery.sparkline.js"></script>
 
     <!-- Custom Js -->
     <script src="../js/admin.js"></script>
-    <script src="../js/pages/tables/jquery-datatable.js"></script>
+    <script src="../js/pages/index.js"></script>
 
     <!-- Demo Js -->
     <script src="../js/demo.js"></script>
-</body>
 
+    
+  </body>
 </html>
+
+
