@@ -1,11 +1,11 @@
 ﻿<?php  
-     include_once "../../../Controller/medecinC.php";
-     include_once "../../../Model/medecin.php";
+     include_once "../../../Controller/produitC.php";
+     include_once "../../../Model/produit.php";
 
   
 
-  $medecinC=new medecinC();
-  $listeMedecin=$medecinC->afficherMedecin();
+  $produitC=new produitC();
+  $listProduit=$produitC->afficherproduit();
 
  /* 
   else if(isset($_POST['supprimer'])){
@@ -22,7 +22,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Les medecins </title>
+    <title>Les produits </title>
     <!-- Favicon-->
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
 
@@ -217,14 +217,14 @@
                     <li class="active">
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">view_list</i>
-                            <span>Les équipes médicales</span>
+                            <span>Gestion Produit</span>
                         </a>
                         <ul class="active">
                             <li>
-                                <a href="../medecin/listMedecin.php">list des médecins</a>
+                                <a href="../produit/listProduit.php">list des produit</a>
                             </li>
                             <li>
-                                <a href="../medecin/ajoutMedecin.php">Ajouter medecin</a>
+                                <a href="../produit/ajoutProduit.php">Ajouter produit</a>
                             </li>
                               
                             
@@ -321,7 +321,7 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                              Liste des medecins
+                              Liste des produits
                             </h2>
                            
                         </div>
@@ -337,41 +337,44 @@
                                 <table class="table table-bordered table-striped table-hover dataTable js-exportable">
                                     <thead>
                                         <tr>
-                                            <th>Nom</th>
-                                            <th>Prenom</th>
-                                            <th>Age</th>
-                                            <th>departement</th>
-                                            <th> Telephone</th>
-                                            <th> action </th>
+                                        <th>image Produit</th>
+                                        <th>Nom </th>
+                                        <th>Prix DT </th>
+                                        <th>quantite totale</th>
+                                        <th>description</th>
+                                        <th>categorie</th>
+                                        <th>action</th>
                                             
                                         </tr>
                                     </thead>
                                     
                                     <tbody id="myTable">
                                                  
-                                        <?php      foreach ($listeMedecin as $row) {?>
+                                        <?php      foreach ($listProduit as $row) {?>
                             <tr class="tr-shadow">
                                
-                               
+                            <td>  <img src="images/<?php echo $row['chemin_img']; ?>"</img></td>
+                                                   
                                 <td>
-                                <?php echo $row['nom']; ?></
+                                <?php echo $row['nom']; ?>
+                                </td>
+                                <td class="desc"><?PHP echo $row['prix']."DT"; ?></td>
+                              
+                                <td><?PHP echo $row['quantite_total']; ?></td>
+                                <td>
+                                <?PHP echo $row['description']; ?>
                                 </td>
                                 <td>
-                                <?php echo $row['prenom']; ?></
-                                </td>
-                                <td class="desc"><?PHP echo $row['age']."ans"; ?></td>
-                                <td><?PHP echo $row['departement']; ?></td>
-                                <td>
-                                <?PHP echo $row['telephone']; ?>
+                                <?PHP echo $row['idCat']; ?>
                                 </td>
                                 <td>
                                 <form
-                                  method="POST" action="supprimerMedecin.php">
+                                  method="POST" action="supprimerProduit.php">
                         <input type="submit" name="supprimer" value="supprimer">
-                        <input type="hidden" value=<?PHP echo $row['idM']; ?> name="idM">
-                        
-                        <a href="modifierMedecin.php?idM=<?PHP echo $row['idM']; ?>" type="button"> Modifier </a>
-                    </td>
+                        <input type="hidden" value=<?PHP echo $row['reference']; ?> name="reference">
+                    
+                        <a href="modifierProduit.php?reference=<?PHP echo $row['reference']; ?>"> Modifier </a>
+                 
                                </form>
                                                     </td>
                                                     <tr class="spacer"></tr>

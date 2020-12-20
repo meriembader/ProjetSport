@@ -304,14 +304,14 @@
                     <li class="active">
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">view_list</i>
-                            <span>Les équipes médicales</span>
+                            <span>Gestion Produit</span>
                         </a>
                         <ul class="active">
                             <li>
-                                <a href="../medecin/listMedecin.php">list des médecins</a>
+                                <a href="../produit/listProduit.php">list des produit</a>
                             </li>
                             <li>
-                                <a href="../medecin/ajoutMedecin.php">Ajouter medecin</a>
+                                <a href="../produit/ajoutProduit.php">Ajouter produit</a>
                             </li>
                               
                             

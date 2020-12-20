@@ -1,48 +1,48 @@
+<?php
+  include_once "../../../Controller/produitC.php";
+  include_once "../../../Model/produit.php";
 
- <?php
-   include_once "../../../Controller/medecinC.php";
-   include_once "../../../Model/medecin.php";
 
-
-function pdo_connect_mysql() {
+  function pdo_connect_mysql() {
     $DATABASE_HOST = 'localhost';
     $DATABASE_USER = 'root';
     $DATABASE_PASS = '';
-    $DATABASE_NAME = 'projetmedecin';
+    $DATABASE_NAME = 'projet';
     try {
-        return new PDO('mysql:host=' . $DATABASE_HOST . ';dbname=' . $DATABASE_NAME . ';charset=utf8', $DATABASE_USER, $DATABASE_PASS);
+    	return new PDO('mysql:host=' . $DATABASE_HOST . ';dbname=' . $DATABASE_NAME . ';charset=utf8', $DATABASE_USER, $DATABASE_PASS);
     } catch (PDOException $exception) {
-        // If there is an error with the connection, stop the script and display the error.
-        exit('Failed to connect to database!');
+    	// If there is an error with the connection, stop the script and display the error.
+    	exit('Failed to connect to database!');
     }
 }
 $msg = '';
 $pdo = pdo_connect_mysql();
-// Check if the medecin id exists, for example update.php?id=1 will get the medecin with the id of 1
-if (isset($_GET['idM'])) {
+// Check if the produit id exists, for example update.php?id=1 will get the produit with the id of 1
+if (isset($_GET['reference'])) {
     if (!empty($_POST)) {
         // This part is similar to the create.php, but instead we update a record and not insert
-      //  $idM = isset($_POST['idM']) ? $_POST['idM'] : NULL;
+      //  $reference = isset($_POST['reference']) ? $_POST['reference'] : NULL;
         $nom = isset($_POST['nom']) ? $_POST['nom'] : '';
-        $prenom = isset($_POST['prenom']) ? $_POST['prenom'] : '';
-        $age = isset($_POST['age']) ? $_POST['age'] : '';
-        $departement = isset($_POST['departement']) ? $_POST['departement'] : '';
-        $telephone = isset($_POST['telephone']) ? $_POST['telephone'] : '';
+        $prix = isset($_POST['prix']) ? $_POST['prix'] : '';
+        $chemin_img = isset($_POST['chemin_img']) ? $_POST['chemin_img'] : '';
+        $quantite_total = isset($_POST['quantite_total']) ? $_POST['quantite_total'] : '';
+        $description = isset($_POST['description']) ? $_POST['description'] : '';
+        $idCat = isset($_POST['idCat']) ? $_POST['idCat'] : '';
         // Update the record
-        $stmt = $pdo->prepare('UPDATE medecin SET  nom = ?, prenom = ?, age = ?, departement = ?, telephone = ? WHERE idM = ?');
-        $stmt->execute([ $nom, $prenom, $age, $departement, $telephone, $_GET['idM']]);
+        $stmt = $pdo->prepare('UPDATE produit SET  nom = ?, prix = ?, chemin_img = ?, quantite_total = ?, description = ? , idC = ?  WHERE reference = ?');
+        $stmt->execute([ $nom, $prix, $chemin_img, $quantite_total, $description,$idC, $_GET['reference']]);
         $msg = 'Updated Successfully!';
     }
-    // Get the medecin from the medecins table
- $stmt = $pdo->prepare('SELECT * FROM medecin WHERE idM = ?');
-   $stmt->execute([$_GET['idM']]);
-  $medecin = $stmt->fetch(PDO::FETCH_ASSOC);
-    if (!$medecin) {
-       exit('medecin doesn\'t exist with that idM!');
+    // Get the produit from the produits table
+ $stmt = $pdo->prepare('SELECT * FROM produit WHERE reference = ?');
+   $stmt->execute([$_GET['reference']]);
+  $produit = $stmt->fetch(PDO::FETCH_ASSOC);
+    if (!$produit) {
+       exit('produit doesn\'t exist with that reference!');
     }
 } 
 else {
-    exit('No idM specified!');
+    exit('No reference specified!');
 }
 
 ?>
@@ -350,14 +350,14 @@ else {
                     <li class="active">
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">view_list</i>
-                            <span>Les équipes médicales</span>
+                            <span>Gestion Produit</span>
                         </a>
                         <ul class="active">
                             <li>
-                                <a href="../medecin/listMedecin.php">list des médecins</a>
+                                <a href="../produit/listProduit.php">list des produit</a>
                             </li>
                             <li>
-                                <a href="../medecin/ajoutMedecin.php">Ajouter medecin</a>
+                                <a href="../produit/ajoutProduit.php">Ajouter produit</a>
                             </li>
                               
                             
@@ -589,38 +589,42 @@ else {
                     <div class="card">
                         <div class="header">
                             <h2>
-                                modifier Medecin
+                                modifier produit
                             </h2>
                          
                         </div>
                         <div class="body">
-                            <form action="modifierMedecinAction.php?idM=<?=$medecin['idM']?>" method="POST">
+                            <form action="modifierProduitAction.php?reference=<?=$produit['reference']?>" method="POST">
                             <table class='table table-hover table-responsive table-bordered'>
                             <tr>
             <td>Name</td>
-            <td><input type='text' name='nom' value ="<?php echo $medecin['nom'];?>" class='form-control' /></td>
+            <td><input type='text' name='nom' value ="<?php echo $produit['nom'];?>" class='form-control' /></td>
         </tr>
         <tr>
-            <td>prenom</td>
-            <td><input type='text' name='prenom'  value ="<?php echo $medecin['prenom'];?>" class='form-control' /></td>
+            <td>prix</td>
+            <td><input type='text' name='prix'  value ="<?php echo $produit['prix'];?>" class='form-control' /></td>
         </tr>
         
         <tr>
-            <td>age</td>
-            <td><input type='text' name='age'  value ="<?php echo $medecin['age'];?>" class='form-control' /></td>
+            <td>chemin_img</td>
+            <td><input type='text' name='chemin_img'  value ="<?php echo $produit['chemin_img'];?>" class='form-control' /></td>
         </tr>
         <tr>
-            <td>departement</td>
-            <td><input type='text' name='departement'value ="<?php echo $medecin['departement'];?>" class='form-control' /></td>
+            <td>quantite_total</td>
+            <td><input type='text' name='quantite_total'value ="<?php echo $produit['quantite_total'];?>" class='form-control' /></td>
         </tr>
         <tr>
-            <td>telephone</td>
-            <td><input type='text' name='telephone'value ="<?php echo $medecin['telephone'];?>" class='form-control' /></td>
+            <td>description</td>
+            <td><input type='text' name='description'value ="<?php echo $produit['description'];?>" class='form-control' /></td>
+        </tr>
+        <tr>
+            <td>catégorie</td>
+            <td><input type='text' name='idCat'value ="<?php echo $produit['idCat'];?>" class='form-control' /></td>
         </tr>
         
      
                                         <button class="btn btn-success waves-effect" type="submit">Valider</button>
-                                        <a href='listMedecin.php' class='btn btn-danger'>Back</a>
+                                        <a href='listProduit.php' class='btn btn-danger'>Back</a>
                                 </table>
                             </form>
                             <?php if ($msg): ?>
