@@ -1,0 +1,631 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Typography | Bootstrap Based Admin Template - Material Design</title>
+
+    <!-- Favicon-->
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap Core Css -->
+    <link href="../plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Waves Effect Css -->
+    <link href="../plugins/node-waves/waves.css" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="../plugins/animate-css/animate.css" rel="stylesheet" />
+
+    <!-- Custom Css -->
+    <link href="../css/style.css" rel="stylesheet">
+
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="../css/themes/all-themes.css" rel="stylesheet" />
+</head>
+
+<body class="theme-pink">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+    
+    <!-- Top Bar -->
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+                <a href="javascript:void(0);" class="bars"></a>
+                <a class="navbar-brand" href="widgets/../../index.html"> <B>SEIN SAIN centre,</B> Parlez-en aux femmes que vous aimez! </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    
+                    <!-- Notifications -->
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                            <i class="material-icons">notifications</i>
+                            <span class="label-count">5</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="header">NOTIFICATIONS</li>
+                            <li class="body">
+                                <ul class="menu">
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <div class="icon-circle bg-light-green">
+                                                <i class="material-icons">person_add</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4>12 nouveaux visiteurs</h4>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> 14 mins ago
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <div class="icon-circle bg-blue-grey">
+                                                <i class="material-icons">comment</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4><b> Maria </b> a laissé un message </h4>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> il y'a deux minutes
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <div class="icon-circle bg-blue-grey">
+                                                <i class="material-icons">comment</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4><b>Med Taib </b> a laissé un message </h4>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> il y'a 4 minutes
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <div class="icon-circle bg-blue-grey">
+                                                <i class="material-icons">comment</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4><b>Asma</b> a laissé un message</h4>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> il y'a 3 heures
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <div class="icon-circle bg-red">
+                                                <i class="material-icons">delete_forever</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4><b>Sinda</b> a supprimé son commentaire</h4>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> il y'a 4 heures
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                
+                                </ul>
+                            </li>
+                            <li class="footer">
+                                <a href="javascript:void(0);">Voir tous les notifications</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- #END# Notifications -->
+                    
+                   
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- #Top Bar -->
+    <section>
+        <!-- Left Sidebar -->
+        <aside id="leftsidebar" class="sidebar">
+            <!-- User Info -->
+            <div class="user-info">
+                <div class="image">
+                    <img src="../images/user3.jpg" width="52" height="52" alt="User" />
+                </div>
+                <div class="info-container">
+                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><B> <font size= "3pt"> Lamis Hm </font> </B></div>
+                    <div class="email">lamishammemi65@gmail.com</div>
+                    <div class="btn-group user-helper-dropdown">
+                        <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
+                        <ul class="dropdown-menu pull-right">
+                            <li><a href="javascript:void(0);"><i class="material-icons">person</i>Profil</a></li>
+                            <li role="seperator" class="divider"></li>
+                            <li><a href="javascript:void(0);"><i class="material-icons">group</i>Abonnés</a></li>
+                            <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Likes</a></li>
+                            <li role="seperator" class="divider"></li>
+                            <li><a href="javascript:void(0);"><i class="material-icons">input</i>Se déconnecter</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- #User Info -->
+            <!-- Menu -->
+            <div class="menu">
+                <ul class="list">
+                    <li class="header">NAVIGATION PRINCIPALE</li>
+                    <li>
+                        <a href="../index.html">
+                            <i class="material-icons">home</i>
+                            <span>Accueil</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="../pages/typography.html">
+                            <i class="material-icons">text_fields</i>
+                            <span>A propos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">view_list</i>
+                            <span>Les équipes médicales</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="../pages/tables/normal-tables.html">Les médecins</a>
+                            </li>
+                            <li>
+                                <a href="../pages/tables/jquery-datatable.html">Les infirmiers </a>
+                            </li>
+                            
+                            
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">perm_media</i>
+                            <span>Nos chambres</span>
+                        </a>
+                        <ul class="ml-menu">
+                            
+                            <li>
+                                <a href="../pages/medias/carousel.html">Carrousel</a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">content_copy</i>
+                            <span>Pour contacter </span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="../pages/examples/sign-in.html">se connecter</a>
+                            </li>
+                            
+                            <li>
+                                <a href="../pages/examples/forgot-password.html">mot de passe oublié</a>
+                            </li>
+                           
+                            <li>
+                                <a href="../pages/examples/404.html">404 - non trouvé</a>
+                            </li>
+                            <li>
+                                <a href="../pages/examples/500.html">500 - erreur</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">map</i>
+                            <span>Nos événements</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="../pages/maps/google.html">Google Map</a>
+                            </li>
+                            <li>
+                                <a href="../pages/maps/yandex.html">YandexMap</a>
+                            </li>
+                        </ul>
+                    </li>
+                   
+                    <li>
+                        <a href="changelogs.html">
+                            <i class="material-icons">update</i>
+                            <span>Changelogs</span>
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- #Menu -->
+            <!-- Footer -->
+            <div class="legal">
+                <div class="copyright">
+                    &copy; 2020 - 2021 <a href="javascript:void(0);">AdminLH-SEIN SAIN centre</a>.
+                </div>
+            </div>
+            <!-- #Footer -->
+            </aside>
+        <!-- #END# Left Sidebar -->
+       
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="block-header">
+                <h2>TYPOGRAPHIE</h2>
+            </div>
+            <!-- Body Copy -->
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>
+                                BODY COPY
+                            </h2>
+                            
+                        </div>
+                        <div class="body">
+                            <p class="lead">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+                            </p>
+                            <p>
+                                Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget
+                            </p>
+                            <p>
+                                Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #END# Body Copy -->
+            <!-- Headings -->
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>
+                                HEADINGS
+                            </h2>
+                            
+                        </div>
+                        <div class="body">
+                            <h1>h1. AdminBSB Heading</h1>
+                            <p class="m-b-30">In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
+
+                            <h2>h2. AdminBSB Heading</h2>
+                            <p class="m-t-10 m-b-30">In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
+
+                            <h3>h3. AdminBSB Heading</h3>
+                            <p class="m-t-15 m-b-30">
+                                In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.
+                            </p>
+
+                            <h4>h4. AdminBSB Heading</h4>
+                            <p class="m-t-15 m-b-30">
+                                In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.
+                            </p>
+
+                            <h5>h5. AdminBSB Heading</h5>
+                            <p class="m-t-15 m-b-30">
+                                In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.
+                            </p>
+
+                            <h6>h6. AdminBSB Heading</h6>
+                            <p class="m-t-15">
+                                In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #END# Headings -->
+            <!-- Text Styles -->
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>
+                                TEXT STYLES
+                                <small>You can use classes which names are <code>.font-bold, .font-italic, .font-underline, .font-line-through, .font-overline</code></small>
+                            </h2>
+                            
+                        </div>
+                        <div class="body">
+                            <div class="row clearfix">
+                                <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                    <p>
+                                        <b>Normal</b>
+                                    </p>
+                                    <p>Default text</p>
+                                    <p class="col-pink">Text pink color</p>
+                                    <p class="col-cyan">Text cyan color</p>
+                                    <p class="col-teal">Text teal color</p>
+                                    <p class="col-orange">Text orange color</p>
+                                    <p class="col-blue-grey">Text blue grey color</p>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                    <p>
+                                        <b>Bold</b>
+                                    </p>
+                                    <p class="font-bold">Default text</p>
+                                    <p class="font-bold col-pink">Text pink color</p>
+                                    <p class="font-bold col-cyan">Text cyan color</p>
+                                    <p class="font-bold col-teal">Text teal color</p>
+                                    <p class="font-bold col-orange">Text orange color</p>
+                                    <p class="font-bold col-blue-grey">Text blue grey color</p>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                    <p>
+                                        <b>Italic</b>
+                                    </p>
+                                    <p class="font-italic">Default text</p>
+                                    <p class="font-italic col-pink">Text pink color</p>
+                                    <p class="font-italic col-cyan">Text cyan color</p>
+                                    <p class="font-italic col-teal">Text teal color</p>
+                                    <p class="font-italic col-orange">Text orange color</p>
+                                    <p class="font-italic col-blue-grey">Text blue grey color</p>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                    <p>
+                                        <b>Underline</b>
+                                    </p>
+                                    <p class="font-underline">Default text</p>
+                                    <p class="font-underline col-pink">Text pink color</p>
+                                    <p class="font-underline col-cyan">Text cyan color</p>
+                                    <p class="font-underline col-teal">Text teal color</p>
+                                    <p class="font-underline col-orange">Text orange color</p>
+                                    <p class="font-underline col-blue-grey">Text blue grey color</p>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                    <p>
+                                        <b>Line Through</b>
+                                    </p>
+                                    <p class="font-line-through">Default text</p>
+                                    <p class="font-line-through col-pink">Text pink color</p>
+                                    <p class="font-line-through col-cyan">Text cyan color</p>
+                                    <p class="font-line-through col-teal">Text teal color</p>
+                                    <p class="font-line-through col-orange">Text orange color</p>
+                                    <p class="font-line-through col-blue-grey">Text blue grey color</p>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                    <p>
+                                        <b>Overline</b>
+                                    </p>
+                                    <p class="font-overline">Default text</p>
+                                    <p class="font-overline col-pink">Text pink color</p>
+                                    <p class="font-overline col-cyan">Text cyan color</p>
+                                    <p class="font-overline col-teal">Text teal color</p>
+                                    <p class="font-overline col-orange">Text orange color</p>
+                                    <p class="font-overline col-blue-grey">Text blue grey color</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #END# Text Styles -->
+            <!-- Blockquotes -->
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>
+                                BLOCKQUOTES
+                            </h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <blockquote class="m-b-25">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                            </blockquote>
+                            <blockquote>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                                <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                            </blockquote>
+                            <blockquote class="blockquote-reverse">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                                <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #END# Blockquotes -->
+            <!-- Unordered List -->
+            <div class="row clearfix">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>
+                                UNORDERED LIST
+                            </h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <ul>
+                                <li>Lorem ipsum dolor sit amet</li>
+                                <li>Consectetur adipiscing elit</li>
+                                <li>Integer molestie lorem at massa</li>
+                                <li>Facilisis in pretium nisl aliquet</li>
+                                <li>
+                                    Nulla volutpat aliquam velit
+                                    <ul>
+                                        <li>Phasellus iaculis neque</li>
+                                        <li>Purus sodales ultricies</li>
+                                        <li>Vestibulum laoreet porttitor sem</li>
+                                        <li>Ac tristique libero volutpat at</li>
+                                    </ul>
+                                </li>
+                                <li>Faucibus porta lacus fringilla vel</li>
+                                <li>Aenean sit amet erat nunc</li>
+                                <li>Eget porttitor lorem</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>
+                                ORDERED LIST
+                            </h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <ol>
+                                <li>Lorem ipsum dolor sit amet</li>
+                                <li>Consectetur adipiscing elit</li>
+                                <li>Integer molestie lorem at massa</li>
+                                <li>Facilisis in pretium nisl aliquet</li>
+                                <li>
+                                    Nulla volutpat aliquam velit
+                                    <ol>
+                                        <li>Phasellus iaculis neque</li>
+                                        <li>Purus sodales ultricies</li>
+                                        <li>Vestibulum laoreet porttitor sem</li>
+                                        <li>Ac tristique libero volutpat at</li>
+                                    </ol>
+                                </li>
+                                <li>Faucibus porta lacus fringilla vel</li>
+                                <li>Aenean sit amet erat nunc</li>
+                                <li>Eget porttitor lorem</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>
+                                UNSTYLED LIST
+                            </h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <ul class="list-unstyled">
+                                <li>Lorem ipsum dolor sit amet</li>
+                                <li>Consectetur adipiscing elit</li>
+                                <li>Integer molestie lorem at massa</li>
+                                <li>Facilisis in pretium nisl aliquet</li>
+                                <li>
+                                    Nulla volutpat aliquam velit
+                                    <ul>
+                                        <li>Phasellus iaculis neque</li>
+                                        <li>Purus sodales ultricies</li>
+                                        <li>Vestibulum laoreet porttitor sem</li>
+                                        <li>Ac tristique libero volutpat at</li>
+                                    </ul>
+                                </li>
+                                <li>Faucibus porta lacus fringilla vel</li>
+                                <li>Aenean sit amet erat nunc</li>
+                                <li>Eget porttitor lorem</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #END# Unordered List -->
+        </div>
+    </section>
+
+    <!-- Jquery Core Js -->
+    <script src="../plugins/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core Js -->
+    <script src="../plugins/bootstrap/js/bootstrap.js"></script>
+
+    <!-- Select Plugin Js -->
+    <script src="../plugins/bootstrap-select/js/bootstrap-select.js"></script>
+
+    <!-- Slimscroll Plugin Js -->
+    <script src="../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="../plugins/node-waves/waves.js"></script>
+
+    <!-- Custom Js -->
+    <script src="../js/admin.js"></script>
+
+    <!-- Demo Js -->
+    <script src="../js/demo.js"></script>
+</body>
+
+</html>

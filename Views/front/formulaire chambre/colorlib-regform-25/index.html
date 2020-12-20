@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>RegistrationForm_v9 by Colorlib</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- LINEARICONS -->
+		<link rel="stylesheet" href="fonts/linearicons/style.css">
+
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+
+		<!-- DATE-PICKER -->
+		<link rel="stylesheet" href="vendor/date-picker/css/datepicker.min.css">
+		
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+
+	<body>
+
+		<div class="wrapper">
+			<div class="inner">
+				<form action="">
+					<h3><font size="+2"><FONT color="pink">Valider votre chambre</FONT></font></h3>
+					<div class="form-row">
+						<div class="form-wrapper">
+							<label for="">Nom et prénom*</label>
+							<input type="text" class="form-control" placeholder="Nom et prénom">
+						</div>
+						<div class="form-wrapper">
+							<label for="">Téléphonne*</label>
+							<input type="text" class="form-control" placeholder="Tél">
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="form-wrapper">
+							<label for="">De *</label>
+							<span class="lnr lnr-calendar-full"></span>
+							<input type="text" class="form-control datepicker-here" data-language='en' data-date-format="jj M aaaa" id="dp1">
+						</div>
+						<div class="form-wrapper">
+							<label for="">Jusqu'à*</label>
+							<span class="lnr lnr-calendar-full"></span>
+							<input type="text" class="form-control datepicker-here" data-language='en'  data-date-format="jj M aaaa" id="dp2">
+						</div>
+					</div>
+					<div class="form-row last">
+						<div class="form-wrapper">
+							<label for="">Chambre*</label>
+							<select name="" id="" class="form-control">
+								<option value="1">SS1</option>
+								<option value="2">SS2</option>
+								<option value="3">SS3</option>
+								<option value="4">SS4</option>
+								<option value="5">SS5</option>
+								<option value="6">SS6</option>
+								<option value="4">SS7</option>
+								<option value="5">SS8</option>
+								<option value="6">SS9</option>
+
+							</select>
+							<i class="zmdi zmdi-chevron-down"></i>
+						</div>
+						<div class="form-wrapper">
+							<label for="">Identifiant*</label>
+							<input type="text" class="form-control" placeholder="Id">
+						</div>
+						
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> J'accepte.
+							<span class="checkmark"></span>
+						</label>
+					</div>
+					<button data-text="Valider">
+						<span>Valider</span>
+					</button>
+				</form>
+			</div>
+		</div>
+		
+		<script src="js/jquery-3.3.1.min.js"></script>
+
+		<!-- DATE-PICKER -->
+		<script src="vendor/date-picker/js/datepicker.js"></script>
+		<script src="vendor/date-picker/js/datepicker.en.js"></script>
+
+		<script src="js/main.js"></script>
+	</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

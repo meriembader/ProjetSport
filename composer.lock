@@ -1,0 +1,67 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "c06d27b3a8b3d8afd80f83b3d864a9b5",
+    "packages": [
+        {
+            "name": "pdfcrowd/pdfcrowd",
+            "version": "4.12.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pdfcrowd/pdfcrowd-php.git",
+                "reference": "fbeafc899a479f6a31498e18190ee62717299846"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pdfcrowd/pdfcrowd-php/zipball/fbeafc899a479f6a31498e18190ee62717299846",
+                "reference": "fbeafc899a479f6a31498e18190ee62717299846",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.3.10"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "pdfcrowd.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pdfcrowd Team",
+                    "email": "support@pdfcrowd.com",
+                    "homepage": "https://pdfcrowd.com/doc/api/"
+                }
+            ],
+            "description": "A client library for the Pdfcrowd API. It lets you convert between HTML, PDF and various image formats",
+            "homepage": "https://pdfcrowd.com/doc/api/",
+            "keywords": [
+                "api",
+                "client",
+                "convert",
+                "html",
+                "pdf",
+                "web page",
+                "web service"
+            ],
+            "time": "2020-04-07T09:20:11+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
+}

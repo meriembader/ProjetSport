@@ -1,0 +1,5 @@
+{
+    "require": {
+        "pdfcrowd/pdfcrowd": "^4.12"
+    }
+}
