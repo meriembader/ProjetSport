@@ -1,3 +1,4 @@
+
 <?php
 
 class config {
@@ -18,6 +19,8 @@ class config {
 
 	/**
 	* 
+	
+		
 	*/
 	class produitC
 	{
@@ -50,6 +53,28 @@ class config {
 			return $liste;
 			
 		}
+	
+		
+	
+	
+		
+		function aaficherPrice(){
+			$min = 100;
+            $max = 300;
+			if (! empty($_POST['min_price'])) {
+				$min = $_POST['min_price'];
+			}
+			
+			if (! empty($_POST['max_price'])) {
+				$max = $_POST['max_price'];
+			}
+			$db = config::getConnexion();
+			$sql=	"select * from produit where prix BETWEEN '$min' AND '$max'";
+			$liste=$db->query($sql);
+			return $liste;
+			
+		}
+		
 
 		/*
 		
