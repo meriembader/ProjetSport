@@ -7,6 +7,7 @@ $dbhandle = new mysqli('127.0.0.1', 'root', '','projet');
 echo $dbhandle->connect_error;
 
 $query = "SELECT  idCat, count(idCat)  FROM produit  group by idCat";
+$query1 ="SELECT COUNT( *),categorie.nom from produit INNER JOIN categorie ON categorie.idCat = produit.idCat GROUP BY idCat";
 $res = 	$dbhandle->query($query);
 
 
@@ -282,13 +283,7 @@ $res = 	$dbhandle->query($query);
     <section class="content">
         <div class="container-fluid">
             <div class="block-header">
-
-
-
-
-
-
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
@@ -304,13 +299,8 @@ $res = 	$dbhandle->query($query);
 		 
 		 while ($row=$res->fetch_assoc()) {
 			 
-			 echo "['".$row['idCat']."',".$row['count(idCat)']."],"; 
-			 
+			 echo "['".$row['idCat']."',".$row['count(idCat)']."],";  
 		 }
-		 
-		 
-		 
-		 
 		 ?>
         ]);
 
@@ -324,7 +314,7 @@ $res = 	$dbhandle->query($query);
         chart.draw(data, options);
       }
     </script>
-  </head>
+
   <body>
  
     <div id="piechart" style="width: 800px; height: 500px;"></div>

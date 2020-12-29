@@ -43,15 +43,16 @@ class config {
 		}
 
 
-		/*
-		
-				function afficherJoinedcategorie(){
+		function afficherJoinedcategorie(){
 			$db = config::getConnexion();
-			$sql="SELECT categorie.idCat, medecin.prenom, categorie.nom, categorie.description, categorie.chemin_img, categorie.date FROM categorie INNER JOIN medecin ON categorie.idM=medecin.idM";
+			$sql="SELECT produit.reference, categorie.nom as nomC, produit.nom, produit.quantite_total, produit.prix, produit.description, produit.chemin_img FROM produit INNER JOIN categorie ON categorie.idCat=produit.idCat";
 			$liste=$db->query($sql);
 			return $liste;
 			
 		}
+
+		/*
+		
 		
 		
 		
