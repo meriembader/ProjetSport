@@ -1,0 +1,1014 @@
+/* Large screens ----------- */
+
+
+/* // Extra large devices (large desktops, 1200px and up) */
+
+@media only screen and (min-width: 1920px) {
+    /* .topnav .logo img {
+        width: 190px;
+    } */
+    #slider-0.slideFrame .slideCell {
+        width: 450px;
+    }
+    .become-member a {
+        font-size: 16px;
+        line-height: 24px;
+        padding: 30px 70px 30px 80px;
+    }
+    .icon-btn {
+        padding: 30px 55px;
+        font-size: 18px;
+        line-height: 25px;
+        margin-right: -40px;
+        margin-top: -2px;
+    }
+    .shopping-bag {
+        padding: 0 25px;
+    }
+    #cssmenu ul li a {
+        padding: 30px 0px;
+    }
+    .about-box-left-img {
+        bottom: -109px;
+    }
+    .sliderCell-text {
+        width: 80%;
+        padding: 40px 50px;
+    }
+    .services-text i {
+        width: 100px;
+        height: 100px;
+    }
+    .services-text i::before {
+        font-size: 40px;
+    }
+    .services-item:hover .services-text {
+        padding: 50px 45px;
+    }
+    .services-text {
+        padding: 0 45px;
+    }
+}
+
+
+/* // for 1366px screens  */
+
+@media screen and (min-width: 1366px) and (max-width: 1439px) {
+    p {
+        font-size: 15px;
+        line-height: 23px;
+    }
+    #cssmenu.sticky .logo img {
+        width: 70%;
+    }
+    .slider-all-text {
+        padding: 260px 0px 120px;
+    }
+    .services-text i {
+        width: 75px;
+        height: 75px;
+        padding: 20px 0;
+    }
+    .services-item i {
+        width: 75px;
+        height: 75px;
+        padding: 20px 0;
+    }
+    .services-item .content-details h3 {
+        padding: 10px 0;
+    }
+    .content-details {
+        padding: 0 20px;
+    }
+    .fullslider2 .item {
+        padding: 100px 0 130px;
+    }
+    .about-bg {
+        padding: 250px 0 200px;
+    }
+}
+
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .become-member a {
+        padding: 30px 10px 30px 37px;
+    }
+    .become-member {
+        -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 16% 100%);
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 16% 100%);
+    }
+    #cssmenu.sticky .logo img {
+        width: 75%;
+        padding: 12px 0;
+    }
+    .logo {
+        padding: 0 0px 0 15px;
+    }
+    .logo img {
+        width: 100%;
+    }
+    .services-text h3 {
+        padding-bottom: 15px;
+        font-size: 20px;
+    }
+    .services-text i {
+        width: 70px;
+        height: 70px;
+        padding: 21px 0;
+        margin-top: -70px;
+    }
+    .services-item i {
+        width: 70px;
+        height: 70px;
+        padding: 21px 0;
+        margin-top: 0;
+    }
+    .services-item .content-details h3 {
+        padding: 6px 0;
+        font-size: 20px;
+    }
+    .content-details {
+        padding: 0 20px;
+    }
+    .services-item .content-details p {
+        font-size: 14px;
+        line-height: 25px;
+    }
+}
+
+
+/* // Large devices (desktops, 992px and up) */
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .pt-150 {
+        padding-top: 100px !important;
+    }
+    .pb-150 {
+        padding-bottom: 100px !important;
+    }
+    .pt-110 {
+        padding-top: 80px !important;
+    }
+    h1 {
+        font-size: 61px;
+        line-height: 65px;
+    }
+    p {
+        font-size: 15px;
+        line-height: 23px;
+    }
+    .logo {
+        width: auto;
+        margin-top: -5px;
+    }
+    .logo a img {
+        width: 160px;
+    }
+    #cssmenu ul li a {
+        margin: 0px 11px;
+        padding: 21px 0px;
+        font-size: 15px;
+    }
+    #cssmenu.sticky .logo img {
+        width: 92%;
+        padding: 12px 0;
+    }
+    .become-member a {
+        font-size: 14px;
+        line-height: 8px;
+        padding: 30px 10px 30px 30px;
+    }
+    .icon-btn {
+        padding: 19px 27px;
+        font-size: 14px;
+        line-height: 29px;
+        margin-right: -20px;
+    }
+    .top-social {
+        padding-right: 2px;
+        padding-left: 32px;
+    }
+    .slider-all-text {
+        padding: 210px 0px 70px;
+    }
+    .slider-all-text p {
+        font-size: 20px;
+        line-height: 30px;
+        padding: 30px 0 40px;
+    }
+    .slider-all-text p {
+        font-size: 20px;
+        line-height: 28px;
+        padding: 30px 0 40px;
+    }
+    .slider-all-text a i::before {
+        font-size: 55px;
+    }
+    .slider-all-text a span {
+        font-size: 16px;
+        line-height: 28px;
+    }
+    .about-box-left h2 {
+        font-size: 39px;
+        line-height: 44px;
+    }
+    .about-box-left p {
+        font-size: 20px;
+        line-height: 28px;
+    }
+    .about-box-left {
+        width: auto;
+        padding: 0 14px;
+    }
+    .about-box-right {
+        padding: 65px;
+    }
+    .fitner-border::before {
+        right: 3px;
+    }
+    .pricing-item-right ul li a {
+        font-size: 14px;
+    }
+    .classes-tab-btn {
+        width: 100%;
+        float: unset;
+        text-align: center;
+        margin-bottom: 24px;
+    }
+    ul.classes-tabs li {
+        display: inline-block;
+    }
+    ul.classes-tabs li.current::before {
+        top: unset;
+        bottom: -23px;
+        transform: translatex(-50%);
+        right: unset;
+        left: 50%;
+        width: 23px;
+        height: 23px;
+        clip-path: polygon(50% 56%, 0 0, 100% 0);
+    }
+    .fitner-classes-tab .tab-content {
+        text-align: center;
+    }
+    .cta-left h2 {
+        font-size: 44px;
+    }
+    .blog-title a {
+        padding: 15px 0 16px;
+    }
+    .blog-title {
+        font-size: 19px;
+        line-height: 27px;
+    }
+    .blog-text {
+        padding: 25px 0;
+    }
+    .feature-home-2 .feature-item {
+        padding: 0 10px;
+    }
+    .fitner-2 .fitner-item {
+        padding: 0 0;
+    }
+    .fullslider .owl-nav button.owl-next,
+    .fullslider .owl-nav button.owl-prev,
+    .fullslider button.owl-dot {
+        padding: 10px !important;
+    }
+    .logo {
+        padding: 0 0px 0 0px;
+    }
+    .slider-all-text {
+        padding: 76px 0px 0;
+    }
+    .fullslider .item {
+        padding: 149px 60px;
+    }
+    .fullslider .item {
+        padding: 180px 60px;
+    }
+    .fullslider2 .item {
+        padding: 180px 60px;
+    }
+    .fullslider3 .item {
+        padding: 180px 60px;
+    }
+    .slider-all-text::before {
+        display: none;
+    }
+    .slider2-all-text {
+        padding: 84px 0px 90px;
+    }
+    .ttm-area {
+        margin-top: 0;
+    }
+    .fullslider3 .item {
+        padding: 180px 60px 56px;
+    }
+    .blog-text {
+        padding: 25px 25px;
+    }
+    .about-bg {
+        padding: 250px 0 140px;
+    }
+    .about-left-text {
+        padding: 60px 30px;
+    }
+    .about-left-text h2 {
+        font-size: 43px;
+        line-height: 64px;
+    }
+    .about-right-text {
+        padding: 30px 0 0;
+    }
+    .class-single-details-img img {
+        width: 96%;
+    }
+    .class-single-details-text h5 {
+        padding: 5px 0 20px;
+    }
+    .about-box-right-img {
+        bottom: -48px;
+    }
+    .pricing-item-right {
+        margin: 38px 24px 28px;
+    }
+}
+
+
+/* // All Medium devices  */
+
+@media (min-width: 320px) and (max-width: 991px) {
+    h1 {
+        font-size: 50px;
+        line-height: 57px;
+    }
+    h3 {
+        font-size: 21px;
+        line-height: 30px;
+    }
+    p {
+        font-size: 15px;
+        line-height: 23px;
+    }
+    #cssmenu.sticky .logo img {
+        padding: 6px 0;
+    }
+    .top-nav2 .logo {
+        transform: translateY(0%);
+    }
+    .top-nav2 #cssmenu.sticky .logo img {
+        width: 60%;
+        padding: 6px 0;
+    }
+    .top-nav2 .logo img {
+        width: 40%;
+    }
+    .top-nav2 #cssmenu ul li a {
+        padding: 11px 14px;
+    }
+    .top-nav2 #cssmenu ul ul li a {
+        padding: 11px 25px;
+    }
+    .top-nav2 .logo img {
+        width: 160px;
+    }
+    .top-nav2 .shopping-bag {
+        padding: 23px 0;
+        text-align: center;
+        width: 70px;
+        position: absolute;
+        right: 103px;
+        top: -93px;
+    }
+    .top-nav2 .logo {
+        padding: 4px 17px;
+        width: 250px;
+    }
+    .top-nav2 #cssmenu {
+        height: 70px;
+    }
+    .top-nav2 .top-socile {
+        display: none;
+    }
+    .top-nav2 .top-address-ditels {
+        text-align: center;
+        width: 100%;
+    }
+    .section-title h2 {
+        padding-bottom: 18px;
+        font-size: 40px;
+    }
+    .section-title p {
+        font-size: 20px;
+        line-height: 35px;
+    }
+    .feature-text h3 {
+        font-size: 24px;
+        line-height: 35px;
+    }
+    .fitner-item h2 {
+        font-size: 27px;
+        line-height: 36px;
+        padding: 19px 0 19px;
+    }
+    .pt-150 {
+        padding-top: 100px !important;
+    }
+    .pb-150 {
+        padding-bottom: 100px !important;
+    }
+    .become-member {
+        display: none;
+    }
+    .icon-btn {
+        clip-path: unset;
+        padding: 20px;
+        margin-right: 0;
+        background: none;
+        outline: none;
+    }
+    .shopping-bag {
+        padding: 0 28px;
+    }
+    .search-dropdown .dropdown-menu .search-btn {
+        margin-left: 0;
+        position: absolute;
+        right: 7px;
+        top: 27px;
+    }
+    .nobile-position {
+        position: absolute;
+        right: 68px;
+    }
+    #cssmenu.sticky {
+        height: 70px;
+    }
+    .logo img {
+        width: 160px;
+    }
+    .button {
+        position: relative;
+        right: 0;
+        top: -38px;
+        float: right;
+    }
+    #cssmenu ul {
+        top: 70px;
+        position: absolute;
+        left: 0;
+    }
+    #cssmenu ul ul {
+        top: 0px;
+    }
+    .top-social {
+        display: none;
+    }
+    .logo {
+        margin-top: 0;
+    }
+    .classes-tab-btn {
+        width: 100%;
+        float: unset;
+        text-align: center;
+        margin: 0;
+        margin-bottom: 24px;
+    }
+    ul.classes-tabs li {
+        display: inline-block;
+    }
+    ul.classes-tabs li.current::before {
+        top: unset;
+        bottom: -23px;
+        transform: translatex(-50%);
+        right: unset;
+        left: 50%;
+        width: 23px;
+        height: 23px;
+        clip-path: polygon(50% 56%, 0 0, 100% 0);
+    }
+    .fitner-classes-tab .tab-content {
+        text-align: center;
+    }
+    .about-box-left {
+        width: 300px;
+        padding: 50px 0;
+    }
+    .fitner-border::before {
+        display: none;
+    }
+    .pt-100 {
+        padding-top: 50px !important;
+    }
+    .fitner-tab-all {
+        width: 97px;
+        margin: 0 1px;
+    }
+    .fitner-tab-all ul li {
+        padding: 24px 0;
+    }
+    .cta-btn {
+        text-align: left;
+        padding: 44px 0 0;
+    }
+    .blog-text {
+        padding: 30px 20px !important;
+    }
+    .copy-right {
+        padding-top: 60px;
+    }
+    .slider-all-text {
+        padding: 210px 0px 90px;
+    }
+    .slider-all-text p {
+        font-size: 20px;
+        line-height: 29px;
+        padding: 30px 0 40px;
+    }
+    .slider-all-text a span {
+        font-size: 17px;
+        line-height: 27px;
+    }
+    .slider-all-text a i::before {
+        font-size: 54px;
+    }
+    .top-address-ditels ul li a {
+        font-size: 14px;
+    }
+    .top-address-ditels ul li {
+        padding-left: 13px;
+    }
+    .top-address-ditels ul li span {
+        font-size: 14px;
+    }
+    .top-address-ditels ul li i {
+        margin-right: 3px;
+    }
+    .about-box-right {
+        padding: 50px;
+    }
+    .feature-home-2 .feature-item {
+        padding: 0 10px;
+    }
+    .trainer-img {
+        padding: 50px 0 0;
+    }
+    .about-bg {
+        padding: 210px 0 120px;
+    }
+    .about-left-text h2 {
+        font-size: 40px;
+        line-height: 59px;
+    }
+    .trainers-single-img img {
+        width: 100%;
+    }
+    .class-single-right-info {
+        margin-top: 50px;
+    }
+    .shop-slider2-right {
+        margin-left: 0px;
+        padding-top: 50px;
+    }
+    .contact-ditels {
+        margin-top: 50px !important;
+    }
+    .pl-5,
+    .px-5 {
+        padding-left: 1rem!important;
+    }
+    .blog-widget-right {
+        margin-top: 50px;
+    }
+    .trainers-single-text {
+        padding-top: 40px;
+    }
+    .class-single-details-img img {
+        width: 95%;
+    }
+    .slider2-all-text {
+        padding: 215px 0px 203px;
+    }
+    .slider-all-text::before {
+        display: none;
+    }
+    .owl-theme .owl-nav {
+        display: none;
+    }
+    .fullslider2 .item {
+        padding: 120px 0;
+    }
+    .hero-2-bg::after {
+        display: none;
+    }
+}
+
+
+/* // Small devices (landscape phones, 576px and up) */
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .mobile-block {
+        display: block;
+    }
+    .desktop-block {
+        display: none;
+    }
+    .fitner-item {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .fitner-tab-all {
+        width: 93px;
+    }
+    ul.classes-tabs li {
+        font-size: 12px;
+        padding: 25px 10px;
+    }
+    .owl-theme .owl-nav {
+        margin-top: 0px;
+        display: none;
+    }
+}
+
+
+/* // Extra small devices (portrait phones, less than 576px) */
+
+@media (max-width: 575.98px) {
+    h1 {
+        font-size: 42px;
+        line-height: 50px;
+    }
+    .mobile-block {
+        display: block;
+    }
+    .desktop-block {
+        display: none;
+    }
+    .fitner-tab-all {
+        width: 92px;
+    }
+    ul.classes-tabs li {
+        font-size: 12px;
+        padding: 25px 10px;
+    }
+    .top-address-ditels ul li:nth-child(2) {
+        display: none;
+    }
+    .slider-all-text p {
+        font-size: 18px;
+        line-height: 23px;
+        padding: 22px 0 34px;
+    }
+    .slider-all-text p br {
+        display: none;
+    }
+    .about-box-right {
+        padding: 30px;
+        display: inline-table;
+        width: 100%;
+    }
+    .about-box-right h2 {
+        z-index: 22;
+        position: relative;
+    }
+    .about-box-right a.btn {
+        margin-left: 0;
+        transform: unset;
+        z-index: 22;
+        position: relative;
+        margin-top: 20px;
+    }
+    .section-title p br {
+        display: none;
+    }
+    .pricing-item-left ul li {
+        padding: 51px 10px;
+    }
+    .pricing-item-right ul li a {
+        font-size: 15px;
+        display: flex;
+        line-height: 18px;
+    }
+    .pricing-item-right ul li a i {
+        font-size: 14px;
+        padding-right: 7px;
+    }
+    .pricing-item-left ul li h3 {
+        line-height: 23px;
+        font-size: 18px;
+    }
+    .pricing-item-left ul li h6 {
+        font-size: 15px;
+    }
+    .pricing-item-left ul li h2 {
+        line-height: 21px;
+        font-size: 28px;
+    }
+    .testimonial-text {
+        padding: 0 27px;
+    }
+    .testimonial-text h3 {
+        height: 94px;
+        font-size: 25px;
+        line-height: 42px;
+    }
+    ul.classes-tabs li {
+        font-size: 11px;
+        padding: 22px 6px;
+    }
+    .cta-left h2 {
+        font-size: 29px;
+    }
+    ul.bmi-tabs li {
+        padding: 20px 15px;
+        font-size: 18px;
+        width: 134px;
+    }
+    .bmi-content .tab-content {
+        padding: 23px;
+    }
+    .hero-text h1 {
+        font-size: 47px;
+        line-height: 50px;
+    }
+    .hero-text h2 {
+        font-size: 20px;
+        padding: 16px 0 25px;
+    }
+    .hero-text p {
+        font-size: 18px;
+        line-height: 26px;
+    }
+    .section-title h2 {
+        font-size: 35px;
+        line-height: 38px;
+    }
+    .testimonial-text h3 {
+        font-size: 22px;
+        line-height: 30px;
+    }
+    .tips-text {
+        padding: 30px;
+    }
+    .about-left {
+        display: unset;
+        align-items: unset;
+    }
+    .about-left-text {
+        width: 100%;
+        padding: 80px 58px;
+        transform: translateY(0%);
+        margin-bottom: 30px;
+    }
+    .about-left-img {
+        width: 70%;
+        margin: 0 auto;
+    }
+    .about-right-text {
+        padding: 50px 0 0;
+    }
+    .trainers-single-img {
+        padding-bottom: 30px;
+    }
+    .shop-slider2-item img {
+        height: 76px;
+    }
+    ul.shop-single-tab li {
+        padding: 13px 7px;
+        font-size: 14px;
+    }
+    .pl-5,
+    .px-5 {
+        padding-left: 1rem!important;
+    }
+    .blog-widget-right {
+        margin-top: 40px;
+    }
+    .contaict-title h2 {
+        font-size: 35px;
+        line-height: 39px;
+    }
+    .class-single-details-img {
+        width: 100%;
+    }
+    .class-single-details-text {
+        width: 100%;
+    }
+    .error-body span {
+        font-size: 151px;
+        line-height: 179px;
+    }
+    .error-body-text {
+        padding: 100px 0px 100px;
+    }
+    .about-box-right-img {
+        display: none;
+    }
+    .bmi-content .tab-content2 {
+        padding: 30px;
+    }
+    .container-btn.btn-1 {
+        padding: 15px 0;
+        text-align: center;
+    }
+    .container-btn2.btn-5 {
+        padding: 15px 0;
+        text-align: center;
+    }
+    .icon-btn {
+        padding: 20px 10px 20px 6px;
+    }
+    .slider2-all-text h1 {
+        font-size: 36px;
+        line-height: 45px;
+    }
+    .pricing-item-right {
+        margin: 45px 15px 50px;
+    }
+    .section-title p {
+        font-size: 18px;
+        line-height: 28px;
+    }
+    .hero-text h2 {
+        line-height: 27px;
+    }
+    .my-account-form {
+        padding: 25px;
+    }
+    .my-account-form .wrapper {
+        margin-left: 4px;
+    }
+    .my-account-form .wrapper label {
+        margin: 0 0px 0 10px;
+    }
+}
+
+@media (max-width: 320px) {
+    h1 {
+        font-size: 34px;
+        line-height: 40px;
+    }
+    .section-title h2 {
+        font-size: 30px;
+        line-height: 38px;
+    }
+    .section-title p {
+        font-size: 17px;
+        line-height: 27px;
+    }
+    .top-address-ditels ul li a {
+        font-size: 12px;
+    }
+    .logo img {
+        width: 100%;
+    }
+    #cssmenu.sticky .logo img {
+        width: 100%;
+    }
+    .top-nav2 .logo {
+        transform: translateY(0%);
+    }
+    .top-nav2 #cssmenu.sticky .logo img {
+        width: 87%;
+        padding: 0;
+    }
+    .icon-btn {
+        padding: 20px 9px;
+    }
+    .shopping-bag {
+        padding: 0 15px;
+    }
+    .logo {
+        margin-top: 0px;
+        height: auto;
+        width: 52%;
+    }
+    .slider-all-text {
+        padding: 179px 0px 58px;
+    }
+    .about-box-left h2 {
+        font-size: 37px;
+        line-height: 44px;
+    }
+    .about-box-left p {
+        font-size: 19px;
+        line-height: 28px;
+        padding: 24px 0 40px;
+    }
+    .about-box-left {
+        width: 300px;
+        padding: 50px 15px;
+    }
+    .about-box-right h2 {
+        font-size: 40px;
+        line-height: 51px;
+    }
+    .fitner-item {
+        padding: 0 0px;
+        width: 100%;
+    }
+    .pricing-item-left ul li h3 {
+        line-height: 22px;
+        font-size: 15px;
+    }
+    .pricing-item-left ul li h2 {
+        line-height: 17px;
+        font-size: 22px;
+    }
+    .pricing-item-left ul li {
+        padding: 48px 10px;
+    }
+    .testimonial-text h3 {
+        height: 90px;
+        font-size: 20px;
+        line-height: 31px;
+    }
+    ul.bmi-tabs li {
+        width: 127px;
+    }
+    .top-address-ditels ul li i {
+        margin-right: 1px;
+        font-size: 14px;
+    }
+    .topnav .logo img {
+        width: 118px;
+    }
+    .topnav .logo {
+        margin-top: 12px;
+    }
+    .services-text i {
+        width: 60px;
+        height: 60px;
+        padding: 14px 0;
+    }
+    .fitner-tab-all {
+        width: 86px;
+    }
+    .fitner-tab-all ul li {
+        padding: 24px 0;
+        font-size: 12px;
+    }
+    ul.bmi-tabs li {
+        width: 119px;
+    }
+    .hero-text h1 {
+        font-size: 40px;
+        line-height: 46px;
+    }
+    .hero-text h2 {
+        font-size: 17px;
+        padding: 16px 0 17px;
+    }
+    .tips-text h3 {
+        font-size: 18px;
+        line-height: 25px;
+    }
+    .cta-left h2 {
+        font-size: 25px;
+    }
+    .top-nav2 .logo {
+        padding: 7px 0 0 18px;
+        width: 182px;
+    }
+    .top-nav2 .logo img {
+        width: 143px;
+    }
+    .top-nav2 .shopping-bag {
+        width: 57px;
+        right: 79px;
+        top: -93px;
+    }
+    .about-left-text {
+        padding: 50px 35px;
+    }
+    .about-left-text h2 {
+        font-size: 31px;
+        line-height: 46px;
+    }
+    .content-details {
+        padding: 0 20px;
+    }
+    .services-item i {
+        width: 65px;
+        height: 65px;
+        padding: 19px 0;
+    }
+    .services-item .content-details h3 {
+        padding: 8px 0;
+    }
+    .my-account-form .wrapper {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+    .pricing-item-right {
+        margin: 45px 15px 50px;
+    }
+    .pricing-item-right ul li a {
+        font-size: 12px;
+    }
+}

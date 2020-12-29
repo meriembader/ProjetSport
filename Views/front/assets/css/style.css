@@ -1,0 +1,68 @@
+/* ============================================================
+    [Master Stylesheet]
+
+	Theme Name: Fitner - Gym & Fitness HTML Template
+	Theme URI: https://themeforest.net/user/raistheme
+	Description: Fitner - Gym & Fitness HTML Template
+	Author: raistheme
+	Author URI: 
+	Version: 1.0  
+
+============================================================== */
+
+
+/*
+  ========================================
+  Google Fonts
+  [1]   Roboto Condensed
+  [2]   Roboto
+  [3]   Poppins
+  ========================================
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,700i&amp;display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&amp;display=swap');
+
+/*
+  ========================================
+  Plugins Style
+  [1]   animate
+  [2]   all
+  [3]   aos
+  [4]   magnific popup
+  [5]   owl carousel
+  [6]   owl theme default
+  [7]   custom animation
+  [8]   slick
+  [9]   reset
+  
+  ========================================
+*/
+
+@import "css_plugins/animate.min.css";
+@import "css_plugins/all.min.css";
+@import "css_plugins/aos.css";
+@import "css_plugins/magnific-popup.css";
+@import "css_plugins/owl.carousel.min.css";
+@import "css_plugins/owl.theme.default.min.css";
+@import "css_plugins/custom-animation.css";
+@import "css_plugins/slick.css";
+@import "css_plugins/reset.css";
+
+/*
+  ========================================
+        Css Style
+  [1]  helper     
+  [2] Menu
+  [3] gym
+  [4] gym-2
+  [5] about 
+  ========================================
+*/
+
+@import "css_section/helper.css";
+@import "css_section/menu.css";
+@import "css_section/gym.css";
+@import "css_section/gym-2.css";
+@import "css_section/about.css";
