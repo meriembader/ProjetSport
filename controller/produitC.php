@@ -17,11 +17,6 @@ class config {
     }
   }
 
-	/**
-	* 
-	
-		
-	*/
 	class produitC
 	{
 		
@@ -54,10 +49,6 @@ class config {
 			
 		}
 	
-		
-	
-	
-		
 		function aaficherPrice(){
 			$min = 100;
             $max = 300;
@@ -77,10 +68,6 @@ class config {
 		
 
 		/*
-		
-		
-		
-		
 		
 		function recuperer($reference_sous_categorie){
 			$db = config::getConnexion();

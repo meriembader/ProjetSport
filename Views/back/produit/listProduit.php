@@ -248,10 +248,7 @@
                             </li>
                         </ul>
                     </li>
-                    
-                  
-                    
-                   
+     
                 </ul>
             </div>
             <!-- #Menu -->
@@ -316,7 +313,7 @@
                                         <th>description</th>
                                         <th>categorie</th>
                                         <th>action</th>
-                                            
+
                                         </tr>
                                     </thead>
                                     
