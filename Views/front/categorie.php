@@ -1,3 +1,8 @@
+<?php  
+  include_once "../../Controller/produitC.php";
+  include_once "../../Model/produit.php";
+  include_once "layout.php";
+  ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +18,9 @@
     <link rel=icon href=iconFit.png type="png">
     <link rel="stylesheet" href="assets/font/flaticon.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-
+    <link href="style.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+        
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
 
