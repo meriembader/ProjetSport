@@ -234,12 +234,6 @@ body {
 .delete .yesno a:hover {
     background-color: #32a367;
 }
-.images{
-    justify-content: space-around;
-    justify-content: space-between;
-    align-items: stretch;
-    /*height : 10px;*/
-}
 </style>
 
 </head>
@@ -393,62 +387,73 @@ body {
     =====>> Shop <<===== -->
     <section id="shop-area" class="shop-gallery pt-100 pb-150">
         <div class="container">
-        <script>
-// Container we'll use to show an image
-let image_popup = document.querySelector('.image-popup');
-// Loop each image so we can add the on click event
-document.querySelectorAll('.images a').forEach(img_link => {
-	img_link.onclick = e => {
-		e.preventDefault();
-		let img_meta = img_link.querySelector('img');
-		let img = new Image();
-		img.onload = () => {
-			// Create the pop out image
-			image_popup.innerHTML = `
-				<div class="con">
-					<h3>${img_meta.dataset.title}</h3>
-					<p>${img_meta.alt}</p>
-					<img src="${img.src}" width="${img.width}" height="${img.height}">
-					<a href="delete.php?id=${img_meta.dataset.id}" class="trash" title="Delete Image"><i class="fas fa-trash fa-xs"></i></a>
-				</div>
-			`;
-			image_popup.style.display = 'flex';
-		};
-		img.src = img_meta.src;
-	};
-});
-// Hide the image popup container if user clicks outside the image
-image_popup.onclick = e => {
-	if (e.target.className == 'image-popup') {
-		image_popup.style.display = "none";
-	}
-};
-</script>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <div class="content home">
-    <h2>Gallery</h2>
-    <br>
-    <br>
-	<p>Welcome to the gallery page, you can view the list of images below.</p>
-    <br>
-    <br>
-
-	
-    
-	<div class="images">
-		<?php foreach ($listCategorie as $image): ?>
-	
-      
-		<a href="produit.php">
-			<img src="../image/<?=$image['chemin_img']?>"  width="300" height="200">
-            <span><?=$image['nom']?></span>
-
-            </a>
-        
-		<?php endforeach; ?>
-	</div>
-</div>
-<div class="image-popup"></div>
+                    <div class="card">
+                        <div class="header">
+                            <h2>
+                              
+                                <small>Use contextual classes to color table rows or individual cells.</small>
+                            </h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);" class=" waves-effect waves-block">Action</a></li>
+                                        <li><a href="javascript:void(0);" class=" waves-effect waves-block">Another action</a></li>
+                                        <li><a href="javascript:void(0);" class=" waves-effect waves-block">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body table-responsive">
+                        <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                             <thead>
+                                 <tr>
+                                 <th>image </th>
+                                         <th>Nom </th>
+                                        
+                                       
+                                      
+                                     
+                                 </tr>
+                             </thead>
+                             
+                             <tbody id="myTable">
+                                          
+                                 <?php      foreach ($listCategorie as $row) {?>
+                     <tr class="tr-shadow">
+                        
+                        
+                  
+                         <td>  <img src="../image/<?php echo $row['chemin_img']; ?>"</img></td>
+                                             <td>
+                                             <?php echo $row['nom']; ?></
+                                             </td>
+                                            
+                                            
+                                            
+                                             <td>
+                                             <form
+                           method="POST" action="">
+                 <input type="submit" name="produit" value="voir produit">
+                                 </form>
+                                 </td>
+                                             <tr class="spacer"></tr>
+                                            
+                                         </tr>
+                                     
+                              
+                                         <?php
+                   }
+                   ?>
+                               
+                               
+                             </tbody>
+                         </table>
+                        </div>
+                    </div>
                 </div>
         </div>
     </section>
