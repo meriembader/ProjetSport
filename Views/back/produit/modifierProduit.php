@@ -577,7 +577,7 @@ else {
         
         <tr>
             <td>chemin_img</td>
-            <td><input type='text' name='chemin_img'  value ="<?php echo $produit['chemin_img'];?>" class='form-control' /></td>
+            <td><input type='file' name='chemin_img'  value ="<?php echo $produit['chemin_img'];?>" class='form-control' /></td>
         </tr>
         <tr>
             <td>quantite_total</td>

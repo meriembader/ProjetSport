@@ -573,7 +573,7 @@ else {
         
         <tr>
             <td>Image </td>
-            <td><input type='text' name='chemin_img'  value ="<?php echo $categorie['chemin_img'];?>" class='form-control' /></td>
+            <td><input type='file' name='chemin_img'  value ="<?php echo $categorie['chemin_img'];?>" class='form-control' /></td>
         </tr>
       
         
