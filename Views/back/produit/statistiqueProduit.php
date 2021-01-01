@@ -3,7 +3,7 @@
 
 <?php
 
-$dbhandle = new mysqli('127.0.0.1', 'root', '','projet');
+$dbhandle = new mysqli('127.0.0.1', 'root', '','projetSport');
 echo $dbhandle->connect_error;
 
 $query = "SELECT  idCat, count(idCat)  FROM produit  group by idCat";
