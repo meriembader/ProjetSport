@@ -6,7 +6,7 @@
 $dbhandle = new mysqli('127.0.0.1', 'root', '','projetSport');
 echo $dbhandle->connect_error;
 
-$query = "SELECT  idCat, count(idCat)  FROM produit  group by idCat";
+$query = "SELECT  nom, count(idCat)  FROM produit  group by idCat";
 $query1 ="SELECT COUNT( *),categorie.nom from produit INNER JOIN categorie ON categorie.idCat = produit.idCat GROUP BY idCat";
 $res = 	$dbhandle->query($query);
 
@@ -292,14 +292,14 @@ $res = 	$dbhandle->query($query);
 
         var data = google.visualization.arrayToDataTable([
 		
-		['idCat','idCat'],
+		['nom','idCat'],
          <?php
 		 
 		 //fetch_assoc(): lit une ligne de résultat MySql dans un tableau associatif //
 		 
 		 while ($row=$res->fetch_assoc()) {
 			 
-			 echo "['".$row['idCat']."',".$row['count(idCat)']."],";  
+			 echo "['".$row['nom']."',".$row['count(idCat)']."],";  
 		 }
 		 ?>
         ]);
