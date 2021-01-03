@@ -6,6 +6,46 @@
 
  $categorieC=new categorieC();
  $listeCategorie=$categorieC->affichercategorie();
+ // define database related variables
+ $database = 'projetSport';
+ $host = 'localhost';
+ $user = 'root';
+ $pass = '';
+
+ // try to connect to database
+ $db = new PDO("mysql:dbname={$database};host={$host};port={3306}", $user, $pass);
+
+ if(!$db){
+
+    echo "Error in database connection";
+ }
+$start = 0;  $per_page = 4;
+$page_counter = 0;
+$next = $page_counter + 1;
+$previous = $page_counter - 1;
+
+if(isset($_GET['start'])){
+ $start = $_GET['start'];
+ $page_counter =  $_GET['start'];
+ $start = $start *  $per_page;
+ $next = $page_counter + 1;
+ $previous = $page_counter - 1;
+}
+
+$q = "SELECT * FROM categorie LIMIT $start, $per_page";
+$query = $db->prepare($q);
+$query->execute();
+
+if($query->rowCount() > 0){
+    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+}
+// count total number of rows in categorie table
+$count_query = "SELECT * FROM categorie";
+$query = $db->prepare($count_query);
+$query->execute();
+$count = $query->rowCount();
+// calculate the pagination number by dividing total number of rows with per page.
+$paginations = ceil($count / $per_page);
 ?>
 
 <!DOCTYPE html>
@@ -342,6 +382,28 @@
                           ?>
     </tbody>
                                 </table>
+                                <center>
+            <ul class="pagination">
+            <?php
+                if($page_counter == 0){
+                    echo "<li><a href=?start='0' class='active'>0</a></li>";
+                    for($j=1; $j < $paginations; $j++) { 
+                      echo "<li><a href=?start=$j>".$j."</a></li>";
+                   }
+                }else{
+                    echo "<li><a href=?start=$previous>Previous</a></li>"; 
+                    for($j=0; $j < $paginations; $j++) {
+                     if($j == $page_counter) {
+                        echo "<li><a href=?start=$j class='active'>".$j."</a></li>";
+                     }else{
+                        echo "<li><a href=?start=$j>".$j."</a></li>";
+                     } 
+                  }if($j != $page_counter+1)
+                    echo "<li><a href=?start=$next>Next</a></li>"; 
+                } 
+            ?>
+            </ul>
+            </center> 
                             </div>
                         </div>
                     </div>

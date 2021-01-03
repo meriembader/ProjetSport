@@ -1,19 +1,53 @@
 ﻿<?php  
      include_once "../../../Controller/produitC.php";
      include_once "../../../Model/produit.php";
+     
 
   
 
   $produitC=new produitC();
   $listProduit=$produitC->afficherproduit();
 
- /* 
-  else if(isset($_POST['supprimer'])){
-   
-    $produitC->supprimerproduit($_POST['reference']);
-    header('location: list_produits.php');
-  }*/
-  
+ // define database related variables
+ $database = 'projetSport';
+ $host = 'localhost';
+ $user = 'root';
+ $pass = '';
+
+ // try to connect to database
+ $db = new PDO("mysql:dbname={$database};host={$host};port={3306}", $user, $pass);
+
+ if(!$db){
+
+    echo "Error in database connection";
+ }
+$start = 0;  $per_page = 4;
+$page_counter = 0;
+$next = $page_counter + 1;
+$previous = $page_counter - 1;
+
+if(isset($_GET['start'])){
+ $start = $_GET['start'];
+ $page_counter =  $_GET['start'];
+ $start = $start *  $per_page;
+ $next = $page_counter + 1;
+ $previous = $page_counter - 1;
+}
+
+$q = "SELECT * FROM produit LIMIT $start, $per_page";
+$query = $db->prepare($q);
+$query->execute();
+
+if($query->rowCount() > 0){
+    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+}
+// count total number of rows in produit table
+$count_query = "SELECT * FROM produit";
+$query = $db->prepare($count_query);
+$query->execute();
+$count = $query->rowCount();
+// calculate the pagination number by dividing total number of rows with per page.
+$paginations = ceil($count / $per_page);
 
   ?>
 <!DOCTYPE html>
@@ -47,6 +81,9 @@
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="../css/themes/all-themes.css" rel="stylesheet" />
+
+
+
 </head>
 
 <body class="theme-pink">
@@ -358,6 +395,29 @@
                                       
                                     </tbody>
                                 </table>
+                                <center>
+            <ul class="pagination">
+            <?php
+                if($page_counter == 0){
+                    echo "<li><a href=?start='0' class='active'>0</a></li>";
+                    for($j=1; $j < $paginations; $j++) { 
+                      echo "<li><a href=?start=$j>".$j."</a></li>";
+                   }
+                }else{
+                    echo "<li><a href=?start=$previous>Previous</a></li>"; 
+                    for($j=0; $j < $paginations; $j++) {
+                     if($j == $page_counter) {
+                        echo "<li><a href=?start=$j class='active'>".$j."</a></li>";
+                     }else{
+                        echo "<li><a href=?start=$j>".$j."</a></li>";
+                     } 
+                  }if($j != $page_counter+1)
+                    echo "<li><a href=?start=$next>Next</a></li>"; 
+                } 
+            ?>
+            </ul>
+            </center> 
+
                             </div>
                         </div>
                     </div>
