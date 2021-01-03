@@ -354,7 +354,7 @@ $paginations = ceil($count / $per_page);
                                
                                
                                 <td>
-                                <img  src="../image/<?php echo $row['chemin_img']; ?>"</img>
+                                <img  src="../../image/<?php echo $row['chemin_img']; ?>"</img>
                                 </td>
                                 <td>
                                 <?php echo $row['nom']; ?>

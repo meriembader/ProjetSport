@@ -359,7 +359,7 @@ $paginations = ceil($count / $per_page);
                                         <?php      foreach ($listProduit as $row) {?>
                             <tr class="tr-shadow">
                                
-                            <td>  <img src="../image/<?php echo $row['chemin_img']; ?>"</img></td>
+                            <td>  <img src="../../image/<?php echo $row['chemin_img']; ?>"</img></td>
                                                    
                                 <td>
                                 <?php echo $row['nom']; ?>

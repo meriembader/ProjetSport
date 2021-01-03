@@ -132,7 +132,7 @@ th.text-right {
 }
 .form-control {
     /* FONT-VARIANT: JIS78; */
-    margin-left: 1350px;
+    margin-left: 1100px;
     display: block;
     width: 20%;
     height: calc(2.25rem + 2px);
