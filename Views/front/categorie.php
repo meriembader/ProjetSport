@@ -426,10 +426,10 @@ image_popup.onclick = e => {
 </script>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="content home">
-    <h2>Gallery</h2>
+    <h2>Categorie</h2>
     <br>
     <br>
-	<p>Welcome to the gallery page, you can view the list of images below.</p>
+	<p>Welcome to the Categorie page, you can view the list of images below.</p>
     <br>
     <br>
 
@@ -444,7 +444,7 @@ image_popup.onclick = e => {
             <span><?=$image['nom']?></span>
 
             </a>
-        
+         
 		<?php endforeach; ?>
 	</div>
 </div>
