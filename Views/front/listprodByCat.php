@@ -1,10 +1,11 @@
 <?php  
-  include_once "../../Controller/categorieC.php";
-  include_once "../../Model/categorie.php";
+  include_once "../../Controller/produitC.php";
+  include_once "../../Model/produit.php";
 
-  
-  $categorieC=new categorieC();
-  $listCategorie=$categorieC->affichercategorie();
+
+  $produitC=new produitC();
+  $listeProduit=$produitC->afficherlistProdByCat();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -392,63 +393,57 @@ body {
     =====>> Shop <<===== -->
     <section id="shop-area" class="shop-gallery pt-100 pb-150">
         <div class="container">
-        <script>
-// Container we'll use to show an image
-let image_popup = document.querySelector('.image-popup');
-// Loop each image so we can add the on click event
-document.querySelectorAll('.images a').forEach(img_link => {
-	img_link.onclick = e => {
-		e.preventDefault();
-		let img_meta = img_link.querySelector('img');
-		let img = new Image();
-		img.onload = () => {
-			// Create the pop out image
-			image_popup.innerHTML = `
-				<div class="con">
-					<h3>${img_meta.dataset.title}</h3>
-					<p>${img_meta.alt}</p>
-					<img src="${img.src}" width="${img.width}" height="${img.height}">
-					<a href="delete.php?id=${img_meta.dataset.id}" class="trash" title="Delete Image"><i class="fas fa-trash fa-xs"></i></a>
-				</div>
-			`;
-			image_popup.style.display = 'flex';
-		};
-		img.src = img_meta.src;
-	};
-});
-// Hide the image popup container if user clicks outside the image
-image_popup.onclick = e => {
-	if (e.target.className == 'image-popup') {
-		image_popup.style.display = "none";
-	}
-};
-</script>
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <div class="content home">
-    <h2>Categorie</h2>
-    <br>
-    <br>
-	<p>Welcome to the Categorie page, you can view the list of images below.</p>
-    <br>
-    <br>
-
-	
-    
-	<div class="images">
-		<?php foreach ($listCategorie as $image): ?>
-	
-      
-		<a href="listprodByCat.php">
-			<img src="../image/<?=$image['chemin_img']?>"  width="300" height="200">
-            <span><?=$image['nom']?></span>
-
-            </a>
-         
-		<?php endforeach; ?>
-	</div>
-</div>
-<div class="image-popup"></div>
-                </div>
+        <div class="table-responsive">
+                         
+                         <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                             <thead>
+                                 <tr>
+                                 <th>image Produit</th>
+                                         <th>Nom </th>
+                                         <th>Prix DT </th>
+                                         <th>quantite totale</th>
+                                         <th>description</th>
+                                      
+                                     
+                                 </tr>
+                             </thead>
+                             
+                             <tbody id="myTable">
+                                          
+                                 <?php      foreach ($listeProduit as $row) {?>
+                     <tr class="tr-shadow">
+                        
+                        
+                  
+                         <td>  <img src="../image/<?php echo $row['chemin_img']; ?>"</img></td>
+                                             <td>
+                                             <?php echo $row['nom']; ?></
+                                             </td>
+                                             <td class="desc"><?PHP echo $row['prix']."DT"; ?></td>
+                                             <td><?PHP echo $row['quantite_total']; ?></td>
+                                             <td>
+                                             <?PHP echo $row['description']; ?>
+                                             </td>
+                                            
+                                             <td>
+                                             <form
+                           method="POST" action="">
+                 <input type="submit" name="acheter" value="acheter">
+                                 </form>
+                                 </td>
+                                             <tr class="spacer"></tr>
+                                            
+                                         </tr>
+                                     
+                              
+                                         <?php
+                   }
+                   ?>
+                               
+                               
+                             </tbody>
+                         </table>
+                     </div>
         </div>
     </section>
     <!-- =====>> End Shop <<===== 

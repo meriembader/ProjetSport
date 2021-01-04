@@ -48,6 +48,15 @@ class config {
 			return $liste;
 			
 		}
+
+
+		function afficherlistProdByCat(){
+			$db = config::getConnexion();
+			$sql="SELECT* FROM `produit`  Group By idCat";
+			$liste=$db->query($sql);
+			return $liste;
+			
+		}
 	
 		function aaficherPrice(){
 			$min = 100;
