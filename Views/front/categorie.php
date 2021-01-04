@@ -297,7 +297,7 @@ body {
                 <div class="row">
                     <div class="col-lg-2">
                         <div class="logo" >
-                            <a href="acceuil.html"><img src="assets/img/logo FitHUb.png" alt="logo"></a>
+                            <a href="acceuil.php"><img src="assets/img/logo FitHUb.png" alt="logo"></a>
                         </div>
                     </div>
                     <div class="col-lg-7 col-md-12">
@@ -308,42 +308,42 @@ body {
                              
                             </li>
                             -->
-                            <li><a href="#">Nos Coachs</a>
+                            <li><a href="#">consulter Abonnements</a>
                                 <ul>
-                                    <li><a href="coach.html">coachs</a></li>
-                                    <li><a href="trainers-single.html">Trainers Single</a></li>
+                                    <li><a href="abonnements.php">abonnements</a></li>
+                                    
                                 </ul>
                             </li>
                            
-                           <li><a href="#">Nos Programmes Sprotifs</a>
+                           <li><a href="#">consulter panier </a>
                                 <ul>
-                                    <li><a href="#">Yoga</a></li>
-                                    <li><a href="#">CrossFit</a></li>
-                                    <li><a href="#">Musculation</a></li>
-                                    <li><a href="#">Cardio</a></li>   
+                                    <li><a href="panier.php">panier1 </a></li>
+                                    <li><a href="panier0.php">panier2 </a></li>
+                                    
                                 </ul>
                             </li>
-                            <li><a href="#">Nutritions&Alimentation</a>
+                            <li><a href="#">Consulter Pack</a>
                                 <ul>
-                                   <li><a href="nutritionniste.html">Nutritionniste</a></li>
-                                    <li><a href="recette.html">Recette alimentaire</a></li>
+                                    <li><a href="pack.php">pack</a></li>
+                                    
                                 </ul>
                             </li>
-                               <li><a href="#">Forum</a>
+                               <li><a href="#">paiement</a>
                                 <ul>
-                                    <li><a href="news.html">News</a></li>
-                                    <li><a href="news-single.html">News Single</a></li>
+                                    <li><a href="paiement.php">paiement</a></li>
+                                   
                                 </ul>
                             </li>
-                            <li><a href="contact.html">Contact</a>
+                            <li><a href="contact.php">Contact</a>
                              
                             </li>
-                            <li><a href="#">Boutique</a>
+                            <li><a href="#">Produit & categorie</a>
                                 <ul>
-                                    <li><a href="shop.html">shop</a></li>
-                                    <li><a href="shop-single.html">Articles</a></li>
+                                    <li><a href="produit.php">produit</a></li>
+                                    <li><a href="categorie.php">categorie</a></li>
                                 </ul>
                             </li>
+                         
                          
                            
                         </ul>
@@ -352,7 +352,7 @@ body {
                         <div class="shopping-bag">
                             <a class="cart" href="#"><i class="fa fa-shopping-bag" ></i><span>0</span></a>
                         </div>
-                        <a href="connexion.html" class="btn btn-3" style="margin-top:10px;">Connexion</a>
+                        <a href="connexion.php" class="btn btn-3" style="margin-top:10px;">Connexion</a>
                         <div class="search-dropdown">
                             <button type="button" class="icon-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                                 <i class="fas fa-search"></i>       
@@ -367,7 +367,6 @@ body {
                 </div>
             </div>
         </nav>
-        <!-- End Top Menu -->
     </header>
     <!-- =====>> End Top Menu <<===== 
     =========================== -->

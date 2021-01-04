@@ -1,14 +1,14 @@
 
+<?php session_start();
+ ?>
 <!DOCTYPE html>
 <html lang="en">
-
-
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>FITHUB</title>
+    <title>FITHUB</title>
 
     <!-- favicon icon -->
     <link rel=icon href=iconFit.png type="png">
@@ -18,12 +18,12 @@
 
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/about.css">
+    <link rel="stylesheet" href="assets/css/panier.css">
 
-    </head>
-
+</head>
 
 <body>
-
     <!-- ===========================
     =====>> Top Preloader <<===== -->
     <div id="preloader">
@@ -35,7 +35,7 @@
         </div>
     </div>
     <!-- =====>> End Top Preloader <<===== 
-        =========================== -->
+    =========================== -->
 
     <!-- ===========================
     =====>> Top Menu <<===== -->
@@ -75,12 +75,12 @@
         <!-- End Top Address -->
 
         <!-- Top Menu -->
-       <nav id="cssmenu">
+        <nav id="cssmenu">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-2">
                         <div class="logo" >
-                            <a href="acceuil.php"><img src="assets/img/logo FitHUb.png" alt="logo"></a>
+                            <a href="accueil.php"><img src="assets/img/logo FitHUb.png" alt="logo"></a>
                         </div>
                     </div>
                     <div class="col-lg-7 col-md-12">
@@ -91,52 +91,57 @@
                              
                             </li>
                             -->
-                            <li><a href="#">consulter Abonnements</a>
+                        <?php 
+if (isset($_SESSION['id']))
+{ ?>
+                            <li><a href="#">Programmes&Coachs</a>
                                 <ul>
-                                    <li><a href="abonnements.php">abonnements</a></li>
-                                    
+                                    <li><a href="#">Programmes sportifs</a>
+                                            
+
+                                    <li><a href="#">Yoga</a></li>
+                                    <li><a href="#">CrossFit</a></li>
+                                    <li><a href="#">Musculation</a></li>
+                                    <li><a href="#">Cardio</a></li>
+                                        
+
+                                    </li>
+                                    <li><a href="#">Nos Coachs</a></li>
                                 </ul>
                             </li>
-                           
-                           <li><a href="#">consulter panier </a>
+                            <li><a href="abonnements.php">Abonnements</a>
+                                </li>
+
+                        
+                            <li><a href="#">Nutritions&Alimentation</a>
                                 <ul>
-                                    <li><a href="panier.php">panier1 </a></li>
-                                    <li><a href="panier0.php">panier2 </a></li>
-                                    
+                                    <li><a href="">Nutritionniste</a></li>
+                                    <li><a href="">Recette alimentaire</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Consulter Pack</a>
+                               <li><a href="#">Forum</a>
                                 <ul>
-                                    <li><a href="pack.php">pack</a></li>
-                                    
-                                </ul>
-                            </li>
-                               <li><a href="#">paiement</a>
-                                <ul>
-                                    <li><a href="paiement.php">paiement</a></li>
-                                   
+                                    <li><a href="#">News</a></li>
+                                    <li><a href="">News Single</a></li>
                                 </ul>
                             </li>
                             <li><a href="contact.php">Contact</a>
                              
                             </li>
-                            <li><a href="#">Produit & categorie</a>
-                                <ul>
-                                    <li><a href="produit.php">produit</a></li>
-                                    <li><a href="categorie.php">categorie</a></li>
-                                </ul>
+                            <li><a href="liste_produits.php">Boutique</a>
+                                
                             </li>
-                         
                          
                            
                         </ul>
                     </div>
                     <!--<div class="col-lg-3 text-right p-0 nobile-position"style=" margin-left: -30px;">-->
                         <div class="shopping-bag">
-                            <a class="cart" href="#"><i class="fa fa-shopping-bag" ></i><span>0</span></a>
+                            <a class="cart" href="panier.php"><i class="fa fa-shopping-bag" ></i><span>0</span></a>
                         </div>
-                        <a href="connexion.php" class="btn btn-3" style="margin-top:10px;">Connexion</a>
-                        <div class="search-dropdown">
+                        <a href="deconnexion.php" class="btn btn-3" style="margin-top:10px;">Deconnexion</a>
+                       
+                        <!-- <div class="search-dropdown">
                             <button type="button" class="icon-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                                 <i class="fas fa-search"></i>       
                             </button>
@@ -144,53 +149,15 @@
                                 <input class="search-input " name="search" placeholder="Search " aria-label="Search ">
                                 <button class="search-btn " type="submit"><i class="fas fa-search "></i>  </button>
                             </form>
-                       <!-- </div>-->
+                        </div>-->
                       
                     </div>
+                     <?php 
+
+                    }else{ ?>
+                        <a href="connexion.php" class="btn btn-3" style="margin-top:10px;">Connexion</a> <?php } ?>
                 </div>
             </div>
         </nav>
         <!-- End Top Menu -->
     </header>
-    <!-- =====>> End Top Menu <<===== 
-    =========================== -->
-
-    <!-- ===========================
-    =====>> Page Hero <<===== -->
-    <section id="page-hero" class="about-bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="page-title text-center">
-                        <h1>fitner <span>news</span></h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-<br>
-<br>
-<br>
-<br>
-    <!-- =====>> End Footer <<===== 
-    =========================== -->
-
-
-
-    <script src="assets/js/jquery-3.3.1.min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/plugins.js"></script>
-    <script src="assets/js/menu.js"></script>
-    <script src="assets/js/scroll-slider.js"></script>
-    <script src="assets/js/jquery.parallax-1.1.3.js"></script>
-    <script src="assets/js/typing.js"></script>
-    <script src="assets/js/contact.js"></script>
-    <script src="assets/js/script.js"></script>
-
-
-</body>
-
-
-
-</html>

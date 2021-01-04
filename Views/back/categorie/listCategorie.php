@@ -337,7 +337,7 @@ $paginations = ceil($count / $per_page);
                                 <label>Recherche:<input id="myInput"  type="text"name="rechercher" class="form-control input-sm" placeholder="" aria-controls="DataTables_Table_1"></label></div>
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped table-hover dataTable js-exportable">
-                                    
+                                    SS
                                         <tr>
                                             <th>Image</th>
                                             <th>nom</th>
