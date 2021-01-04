@@ -322,11 +322,11 @@ else {
             <!-- User Info -->
             <div class="user-info">
                 <div class="image">
-                    <img src="../images/user3.jpg" width="52" height="52" alt="User" />
+                    <img src="" width="52" height="52" alt="User" />
                 </div>
                 <div class="info-container">
-                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><B><font size ="3pt"> Lamis Hm </font></B></div>
-                    <div class="email">lamishammemi65@gmail.com</div>
+                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><B><font size ="3pt"> fadwaberrich </font></B></div>
+                    <div class="email">fadwaberrich@esprit.tn</div>
                     <div class="btn-group user-helper-dropdown">
                         <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                         <ul class="dropdown-menu pull-right">
@@ -349,7 +349,7 @@ else {
                     <li class="active">
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">view_list</i>
-                            <span>Les équipes médicales</span>
+                            <span>Gestion Produit</span>
                         </a>
                         <ul class="active">
                             <li>
